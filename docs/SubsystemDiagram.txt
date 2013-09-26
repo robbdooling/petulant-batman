@@ -1,0 +1,45 @@
+
+                           +-----------------------------------+
+                           |UI                                 |
+                           |-----------------------------------|
+                           |Responsible for user interface     |
+                           |Displays data and executes commands|
+                           +-----------+-----------------------+
+                                       |
+                                       |
+                                       |
+                                       |
+                                       |
+                     +-----------------+-------------------------+
+                     |CMD Builder                                |
+                     |-------------------------------------------|
+                     |Builds commands for the UI to execute      |
+                     |Uses current Study object to build commands|
+                     |that work with the selected study and Study|
+                     |Finder to build commands that locate and   |
+                     |select studies                             |
+                     +-----+-------------------------------+-----+
+                           |                               |
+                           +-----+                         +-----------------------+
+                                 |                                                 |
+                                 v                                                 v
+      +-----------------------------------+                           +------------------------------------+
+      |Study Builder                      |                           |Study                               |
+      |-----------------------------------|                           |------------------------------------|
+      |Builds a study from a requested    |                           |Manages the currently selected study|
+      |location and sets the current study|                           |and maintains the state of it       |
+      |to that object                     |                           +------------------------------------+
+      +-----------------------------------+                                     ^               ^
+                                                                                |               |
+                                                                                |               |
+                                                                                |               +---------------------+
+                                                                          +-----+                                     |Implements
+                                                                          | Implements                                |
+                                                                          |                                           |
+                                                       +------------------+-------------------+         +-------------+------------------------+
+                                                       |FileStudy                             |         |RemoteStudy                           |
+                                                       |--------------------------------------|         |--------------------------------------|
+                                                       |An implementation of study that uses  |         |An implementation of study that uses  |
+                                                       |file locations to locate the images in|         |remote network locations to locate the|
+                                                       |the study.                            |         |images in the study                   |
+                                                       +--------------------------------------+         +--------------------------------------+
