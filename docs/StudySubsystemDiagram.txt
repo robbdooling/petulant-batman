@@ -3,18 +3,18 @@
 
                                +-----------------------------+
                                |Study                        |
-                               |-----------------------------|
-                               |Stubs out methods for dealing|<------+             +----------------------------+
-                               |with a study                 |       |             |FileStudy                   |
-                               +-----------------------------+       |  Implements |----------------------------|
-                                                                     +-------------+Implements Study for dealing|
-                                                                     |             |with studies located on the |
-                                                                     |             |local filesystem            |
-                                                                     |             +----------------------------+
-                                                                     |
-                                                                     |             +----------------------------+
-                                                                     |             |RemoteStudy                 |
-                                                                     |             |----------------------------|
+                  Builds       |-----------------------------|
+                   +---------->|Stubs out methods for dealing|<------+             +----------------------------+
+                   |           |with a study                 |       |             |FileStudy                   |
+                   |           +-----------------------------+       |  Implements |----------------------------|
+                   |                                                 +-------------+Implements Study for dealing|
+                   |                                                 |             |with studies located on the |
+             +-----+------------------------------+                  |             |local filesystem            |
+             |StudyBuilder                        |                  |             +----------------------------+
+             |------------------------------------|                  |
+             |Builds a study from a given location|                  |             +----------------------------+
+             |and method of communication         |                  |             |RemoteStudy                 |
+             +------------------------------------+                  |             |----------------------------|
                                                                      |             |Implements Study for dealing|
                                                                      +-------------+with studies located on a   |
                                                                        Implements  |remote filesystem           |
