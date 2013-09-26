@@ -1,0 +1,30 @@
+
+
+        +-------------------------------------------+       Builds
+        |CMDBuilder                                 |
+        |-------------------------------------------+-------------------+              +--------------------------+
+        |Builds commands based on requested actions |                   |              |Command                   |
+        +-------------------------------------------+                   +------------->|--------------------------|
+                                                                                       |Interface for the commands|
+                                                                                       +--------------------------+
+                                                                                                   ^
+                                                                                                   | Implements
+                                                                                                   |
+                                                                +--------------------------+       |        +---------------------------+
+                                                                |LeftCommand               |       |        |RightCommand               |
+                                                                |--------------------------|       |        |---------------------------|
+                                                                |Command that implements   |       |        |Command that implements    |
+                                                                |functionality for the left+-------|--------+functionality for the right|
+                                                                |arrow in the ui           |       |        |arrow in the ui            |
+                                                                +--------------------------+       |        +---------------------------+
+                                                                                                   |
+                                                          +--------------------------------+       |        +------------------------------+
+                                                          |NewStudyCommand                 |       |        |SaveStudyCommand              |
+                                                          |--------------------------------|       |        |------------------------------|
+                                                          |Command that selects a new study+-------+--------+Command that implements saving|
+                                                          +--------------------------------+                |studies back to their location|
+                                                                                                            +------------------------------+
+
+
+                                                                                               . . .
+                                                                                                etc
