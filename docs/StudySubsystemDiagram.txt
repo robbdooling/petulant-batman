@@ -1,0 +1,21 @@
+
+
+
+                               +-----------------------------+
+                               |Study                        |
+                               |-----------------------------|
+                               |Stubs out methods for dealing|<------+             +----------------------------+
+                               |with a study                 |       |             |FileStudy                   |
+                               +-----------------------------+       |  Implements |----------------------------|
+                                                                     +-------------+Implements Study for dealing|
+                                                                     |             |with studies located on the |
+                                                                     |             |local filesystem            |
+                                                                     |             +----------------------------+
+                                                                     |
+                                                                     |             +----------------------------+
+                                                                     |             |RemoteStudy                 |
+                                                                     |             |----------------------------|
+                                                                     |             |Implements Study for dealing|
+                                                                     +-------------+with studies located on a   |
+                                                                       Implements  |remote filesystem           |
+                                                                                   +----------------------------+
