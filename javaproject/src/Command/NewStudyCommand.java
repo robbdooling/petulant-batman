@@ -1,4 +1,4 @@
-package javaproject;
+package Command;
 
 public class NewStudyCommand implements Command {
 

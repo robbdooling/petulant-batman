@@ -1,7 +1,7 @@
 /**
  * Handles reseting the index of the currently selected images
  */
-package javaproject;
+package Command;
 
 public class ReindexCommand implements Command {
 
