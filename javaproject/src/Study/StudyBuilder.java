@@ -95,7 +95,7 @@ public class StudyBuilder {
 	}
 	
 	/**
-	 * Gets the path as "absolutely" as the original root director you gave to
+	 * Gets the path as "absolutely" as the original root directory you gave to
 	 * this StudyBuilder. Meant to be called on the .jpgs of a study.
 	 * @param dir The directory of the Study
 	 * @param paths Path names to Study images
@@ -135,7 +135,7 @@ public class StudyBuilder {
 	
 	public class NoValidStudiesFoundException extends Exception {
 		NoValidStudiesFoundException() {
-			super("No valid studies could be found in the given root director.");
+			super("No valid studies could be found in the given root directory.");
 		}
 	}
 }
