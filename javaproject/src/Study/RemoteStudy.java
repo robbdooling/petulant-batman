@@ -27,4 +27,10 @@ public class RemoteStudy implements Study {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

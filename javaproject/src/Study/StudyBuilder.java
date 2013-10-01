@@ -81,8 +81,12 @@ public class StudyBuilder {
 				//Also, a settings file may mark a study in the future, .jpg regex is
 				//only temporary
 				// - Matt
-				if (jpgs.length > 0)
-					studies.add(new FileStudy(Arrays.asList(getAbsolutePaths(studyDir, jpgs))));
+				if (jpgs.length > 0) {
+					studies.add(new FileStudy(
+						Arrays.asList( getAbsolutePaths(studyDir, jpgs) ),
+						studyDir.getName()
+					));
+				}
 				
 			}
 		}

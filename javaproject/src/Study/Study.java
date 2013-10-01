@@ -10,6 +10,8 @@ public interface Study {
 	 */
 	public List<String> getImgAddresses();
 	
+	public String getName();
+	
 	public int getIndex();
 	public void setIndex(int newIndex);
 	public String getLocation();

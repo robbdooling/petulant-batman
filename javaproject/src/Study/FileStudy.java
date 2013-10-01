@@ -5,14 +5,21 @@ import java.util.List;
 public class FileStudy implements Study {
 	
 	private List<String> imgAddresses;
+	private String name;
 	
-	public FileStudy(List<String> imgAddresses) {
+	public FileStudy(List<String> imgAddresses, String name) {
 		this.imgAddresses = imgAddresses;
+		this.name = name;
 	}
 
 	@Override
 	public List<String> getImgAddresses() {
 		return imgAddresses;
+	}
+	
+	@Override
+	public String getName() {
+		return name;
 	}
 
 	@Override
