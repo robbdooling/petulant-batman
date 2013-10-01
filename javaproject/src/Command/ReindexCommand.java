@@ -7,8 +7,8 @@ public abstract class ReindexCommand implements Command {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+				
 	}
-
+	abstract public int direction();
+	//This determines the direction the command goes in. -1 is to the left, 1 is to the right
 }
