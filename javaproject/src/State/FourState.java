@@ -3,9 +3,8 @@ package State;
 public class FourState implements State {
 
 	@Override
-	public void images() {
-		// TODO Auto-generated method stub
-		
+	public int images() {
+		return 4;
 	}
 
 }
