@@ -1,7 +1,6 @@
 package View;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -10,34 +9,18 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
-import javax.swing.JButton;
-import javax.swing.JPanel; 
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
 
 public class Frame extends JFrame{
 	
-	private JPanel centerPane;
-	private JButton rightButton;
-	private JButton leftButton;
-	
+	private JLabel item1;
 	
 	public Frame(){
 		super("Title Bar");
-		setLayout(new GridBagLayout());
+		setLayout(new FlowLayout());
 		
-		GridBagConstraints gbc = new GridBagConstraints();
-		
-		//Menu
-		
-		
-		//Right Button
-		
-		
-		//Left Button
-		
-		
-		//Center Panel
+		item1 = new JLabel("This is a label");
+		item1.setToolTipText("Go Forward");
+		add(item1);
 		
 	}
 	
