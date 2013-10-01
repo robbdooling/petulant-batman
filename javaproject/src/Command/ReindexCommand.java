@@ -3,7 +3,7 @@
  */
 package Command;
 
-public class ReindexCommand implements Command {
+public abstract class ReindexCommand implements Command {
 
 	@Override
 	public void execute() {
