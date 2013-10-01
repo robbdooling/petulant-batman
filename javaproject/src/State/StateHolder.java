@@ -1,7 +1,5 @@
 package State;
 
-import java.util.ArrayList;
-
 public class StateHolder {
 	private State currentState;
 	private StateHolder(){
