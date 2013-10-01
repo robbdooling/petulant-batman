@@ -56,6 +56,7 @@ public class StudyBuilder {
 	private FileStudy[] findLocalStudies() throws NoValidStudiesFoundException {
 		//This should probably return paths, not FileStudys. If it's given to the UI
 		//we don't want the UI to be dealing with a Study object
+		//-Rob
 		ArrayList<FileStudy> studies = new ArrayList<FileStudy>();
 		File root = new File(rootDir);
 		
