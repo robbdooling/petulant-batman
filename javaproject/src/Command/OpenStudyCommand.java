@@ -1,6 +1,6 @@
 package Command;
 
-public class NewStudyCommand implements Command {
+public class OpenStudyCommand implements Command {
 
 	@Override
 	public void execute() {

@@ -1,16 +1,12 @@
 package Director;
 
 import Study.Study;
-//TODO implement everything
 public class Director {
-	static final Director D = new Director();
-	public static Director D(){
-		return D;
+	private static Study study = null;
+	public static Study getStudy(){
+		return study;
 	}
-	public Study getStudy(){
-		return null;	
-	}
-	public void setStudy(Study newStudy){
-		
+	public static void setStudy(Study newStudy){
+		study = newStudy;
 	}
 }
