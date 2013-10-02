@@ -1,28 +1,27 @@
 package State;
 
 public class StateHolder {
-	private static final StateHolder steak = null;
-	private static State currentState;
-	public static StateHolder steak(){
-		return steak;
-	}
-	private StateHolder(){
-		currentState = new ZeroState();
-	}
+	private static State currentState = new ZeroState();
+	
 	public static void next(){
-		switch(currentState.images()){
-			case 0:
-				//Switch to 1
-				currentState = new OneState();
-			case 1:
-				//switch to 4
-				currentState = new FourState();
-			case 4:
-				//switch to 1
-				currentState = new OneState();
+		if(currentState.images() == 0){
+			//Switch to 1
+			currentState = new OneState();
+		}else if(currentState.images() == 1){
+			//switch to 4
+			currentState = new FourState();
+		}else if(currentState.images() == 4){
+			//switch to 1
+			currentState = new OneState();
 		}
 	}
+	public static void setFour(){
+		currentState = new FourState();
+	}
 	public static int images(){
-		return 0;
+		return currentState.images();
+	}
+	public static void empty(){
+		currentState = new ZeroState();
 	}
 }
