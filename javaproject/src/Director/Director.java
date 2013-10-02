@@ -1,7 +1,9 @@
 package Director;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import State.StateHolder;
 import Study.Study;
 public class Director {
 	private static Study study = null;
@@ -11,9 +13,8 @@ public class Director {
 	public static void setStudy(Study newStudy){
 		study = newStudy;
 	}
-	public static ArrayList<String> getImages(){
-	
-		return null;
+	public static List<String> getImages(){
+		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
 		
 	}
 }
