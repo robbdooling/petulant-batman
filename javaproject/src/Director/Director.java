@@ -78,7 +78,7 @@ public class Director {
 		}
 		int currentIndex = study.getIndex();
 		int step = StateHolder.images();
-		return ((currentIndex - step) < 0);
+		return !((currentIndex - step) < 0);
 	}
 	/**
 	 * Indicates if there is anything to the "right"
@@ -92,6 +92,6 @@ public class Director {
 		int step = StateHolder.images();
 		int maxIndex = study.getImgAddresses().size();
 		
-		return ((currentIndex + step) > maxIndex);
+		return !((currentIndex + step) > maxIndex);
 	}
 }
