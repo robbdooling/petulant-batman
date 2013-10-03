@@ -154,7 +154,6 @@ public class Frame extends JFrame {
 		
 		//create file menu items
 		JMenuItem selectDirectory = new JMenuItem("Select Directory");
-		JMenuItem openStudy = new JMenuItem("Open Study");
 		JMenuItem save = new JMenuItem("Save");
 		JMenuItem saveAs = new JMenuItem("Save As");
 		JMenuItem close = new JMenuItem("Close Study");
@@ -173,7 +172,6 @@ public class Frame extends JFrame {
 		
 		// add to the file menu
 		file.add(selectDirectory);
-		file.add(openStudy);
 		file.add(save);
 		file.add(saveAs);
 		file.add(close);
@@ -195,10 +193,11 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//open();
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-					Director.setRoot(fc.getSelectedFile().getAbsolutePath());
+					open(fc.getSelectedFile().getAbsolutePath());
 				} 
 				availableStudies();
 				singleTileMode();
+				fillScreen(viewed);
 			}
 			
 		});
