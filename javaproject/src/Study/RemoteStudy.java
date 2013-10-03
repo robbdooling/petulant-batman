@@ -2,6 +2,12 @@ package Study;
 
 import java.util.List;
 
+/**
+ * A shell for an implementation of a Study that is built from
+ * a remote address.
+ * @author msd7734
+ *
+ */
 public class RemoteStudy implements Study {
 	public RemoteStudy() { }
 	
