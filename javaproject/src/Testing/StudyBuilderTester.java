@@ -28,8 +28,8 @@ public class StudyBuilderTester {
 					}
 				}
 			}
-			catch (StudyBuilder.NoValidStudiesFoundException nvsfe) {
-				System.out.println("No studies could be found in " + sb.getSearchDir());
+			catch (NoValidStudiesFoundException nvsfe) {
+				System.out.println(nvsfe);
 			}
 		}
 		

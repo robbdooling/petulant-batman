@@ -96,7 +96,7 @@ public class StudyBuilder {
 		
 		//we have no studies, up to the caller to decide what to do
 		if (studies.size() == 0)
-			throw new NoValidStudiesFoundException();
+			throw new NoValidStudiesFoundException(rootDir);
 		
 		return studies.toArray(new FileStudy[]{});
 	}
@@ -140,9 +140,5 @@ public class StudyBuilder {
 		rootDir = dir;
 	}
 	
-	public class NoValidStudiesFoundException extends Exception {
-		NoValidStudiesFoundException() {
-			super("No valid studies could be found in the given root directory.");
-		}
-	}
+	
 }
