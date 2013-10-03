@@ -36,7 +36,7 @@ public class Director {
 	 * @return the list of images to load
 	 */
 	public static List<String> getImages(){
-		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images() - 1));
+		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
 		
 	}
 	/**
