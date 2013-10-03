@@ -13,7 +13,11 @@ public abstract class ReindexCommand implements Command {
 	public void execute() {
 		Study currentStudy = Director.getStudy();
 		int currentIndex = currentStudy.getIndex();
-		int newIndex = currentIndex + (StateHolder.images() * direction());
+		int newIndex;
+		if(direction() == -1 && (currentIndex - StateHolder.images()) < 0){
+			newIndex = 0;
+		}
+		newIndex = currentIndex + (StateHolder.images() * direction());
 		currentStudy.setIndex(newIndex);
 	}
 	abstract public int direction();
