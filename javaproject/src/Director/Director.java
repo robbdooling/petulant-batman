@@ -1,5 +1,6 @@
 package Director;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,8 +28,11 @@ public class Director {
 	}
 	public static List<String> getAvailStudies() throws NoValidStudiesFoundException{
 		availStudies =  Arrays.asList(StudyBuilder.getAvailableStudies(root, StudyType.local));
-		
-		return null;
+		List<String> stringStudies = new ArrayList<String>();
+		for(Study curr: availStudies){
+			stringStudies.add(curr.getMyPath());
+		}
+		return stringStudies;
 	}
 	public static void choseStudy(int Index){
 		study = availStudies.get(Index);
