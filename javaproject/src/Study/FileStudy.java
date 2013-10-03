@@ -1,17 +1,20 @@
 package Study;
 
 import java.util.List;
+import java.io.FileWriter;
 
 public class FileStudy implements Study {
 	
 	
 	private List<String> imgAddresses;
 	private String name;
+	private String myPath;
 	private int curIndex;
 	private int bufferSize;
 	
-	public FileStudy(List<String> imgAddresses, String name, int startIndex) {
+	public FileStudy(List<String> imgAddresses, String name, String myPath, int startIndex) {
 		this.imgAddresses = imgAddresses;
+		this.myPath = myPath;
 		this.name = name;
 		this.curIndex = startIndex;
 		
@@ -32,12 +35,18 @@ public class FileStudy implements Study {
 	
 	@Override
 	public void saveState() {
+		
 		return;
 	}
 	
 	@Override
 	public String getName() {
 		return name;
+	}
+	
+	@Override
+	public String getMyPath() {
+		return myPath;
 	}
 
 	@Override

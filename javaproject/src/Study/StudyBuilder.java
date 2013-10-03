@@ -138,6 +138,7 @@ public class StudyBuilder {
 					studies.add(new FileStudy(
 						Arrays.asList( getAbsolutePaths(studyDir, jpgs) ),
 						studyDir.getName(),
+						studyDir.getAbsolutePath(),
 						0
 					));
 				}

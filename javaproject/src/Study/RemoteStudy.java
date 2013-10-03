@@ -34,6 +34,11 @@ public class RemoteStudy implements Study {
 	}
 	
 	@Override
+	public String getMyPath() {
+		return null;
+	}
+	
+	@Override
 	public void saveState() {
 		return;
 	}
