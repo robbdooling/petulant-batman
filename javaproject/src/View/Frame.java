@@ -1,5 +1,11 @@
 package View;
 
+import Command.ChangeStateCommand;
+import Command.LeftCommand;
+import Command.RightCommand;
+import Command.SaveStudyCommand;
+import Director.Director;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -11,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.jws.soap.SOAPBinding.Style;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,10 +31,16 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicArrowButton;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
+import javax.swing.text.StyledDocument;
 
 
 
@@ -43,6 +56,12 @@ public class Frame extends JFrame {
 	private ArrayList<String> viewed;
 	private ArrayList<String> upcoming;
 	private final JFileChooser fc = new JFileChooser();
+	
+	private LeftCommand left;
+	private RightCommand right;
+	private ChangeStateCommand changeState;
+	private SaveStudyCommand saveStudy;
+	
 	
 	public Frame()
 	{
@@ -65,23 +84,61 @@ public class Frame extends JFrame {
 		buildMenuBar();
 		setResizable(false);
 		startUpScreen();
+		
+		
+		left = new LeftCommand();
+		right = new RightCommand();
+		changeState = new ChangeStateCommand();
+		saveStudy = new SaveStudyCommand();
+		
 		add(mainLayout);
 		setVisible(true);
 	}
 	
 	public void availableStudies()
 	{
-		JOptionPane studyList = new JOptionPane();
-		JFrame test = new JFrame();
-		test.setSize(500, 500);
 		
-		@SuppressWarnings("unchecked")
+		final JFrame test = new JFrame();
+		test.setSize(500, 500);
+		test.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		JList<Object> listOfStudies = new JList<Object>(upcoming.toArray());
 		
-		test.add(listOfStudies);
-		studyList.add(test);
+		JPanel availableStudyFrame = new JPanel(new BorderLayout());
+		JPanel buttonFlow = new JPanel(new FlowLayout());
 		
-		studyList.setVisible(true);
+		JButton select = new JButton("Select");
+		JButton cancle = new JButton("Cancle");
+		
+		buttonFlow.add(select);
+		buttonFlow.add(cancle);
+		
+		availableStudyFrame.add(buttonFlow, BorderLayout.SOUTH);
+		availableStudyFrame.add(listOfStudies);
+		
+		test.add(availableStudyFrame);
+		
+		select.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				test.dispose();
+				
+			}
+			
+		});
+		
+		cancle.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				test.dispose();
+				
+			}
+			
+		});
+		
+		
+		test.setVisible(true);
 		
 	}
 	
@@ -96,12 +153,13 @@ public class Frame extends JFrame {
 		JMenuItem info = new JMenu("Info");
 		
 		//create file menu items
-		JMenuItem open = new JMenuItem("Open");
+		JMenuItem selectDirectory = new JMenuItem("Select Directory");
 		JMenuItem save = new JMenuItem("Save");
 		JMenuItem saveAs = new JMenuItem("Save As");
 		JMenuItem close = new JMenuItem("Close Study");
 		JMenuItem exit = new JMenuItem("Exit");
 		
+		saveAs.setEnabled(false);
 		
 		//create view menu items
 		fourTile = new JMenuItem("Four Tile Mode");
@@ -212,7 +270,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				about();
 				
 			}
 			
@@ -269,8 +327,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
 //		topScreen.add(openStudy);
@@ -331,8 +389,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fillScreen(right());
-				rightArrow.setEnabled(isEnabled(0));
-				leftArrow.setEnabled(isEnabled(1));
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
 			}
 			
 		});
@@ -342,8 +400,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fillScreen(left());
-				rightArrow.setEnabled(isEnabled(0));
-				leftArrow.setEnabled(isEnabled(1));
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
 			}
 			
 		});
@@ -367,8 +425,8 @@ public class Frame extends JFrame {
 		
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		
 		// add to layouts
@@ -445,8 +503,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
 //		topScreen.add(openStudy);
@@ -583,26 +641,79 @@ public class Frame extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
-	public boolean isEnabled(int flag)
+//	public boolean isEnabled(int flag)
+//	{
+//		boolean result = true;
+//		
+//		if(flag == 0)
+//		{
+//			if(upcoming.size() < 1)
+//			{
+//				result = false;
+//			}
+//		}
+//		else
+//		{
+//			if(viewed.size() < 2)
+//			{
+//				result = false;
+//			}
+//		}
+//		
+//		return result;
+//	}
+//	
+	public void about()
 	{
-		boolean result = true;
+		final JFrame aboutFrame = new JFrame();
+		aboutFrame.setSize(300, 200);
+		aboutFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
-		if(flag == 0)
-		{
-			if(upcoming.size() < 1)
-			{
-				result = false;
-			}
-		}
-		else
-		{
-			if(viewed.size() < 2)
-			{
-				result = false;
-			}
-		}
+		JPanel aboutLayout = new JPanel(new BorderLayout());
+		JPanel aboutInfo = new JPanel(new FlowLayout());
+		JPanel aboutButtons = new JPanel(new FlowLayout());
 		
-		return result;
+		JButton cool = new JButton("Thats Fucking Awesome!");
+		
+		StyledDocument document = new DefaultStyledDocument();
+		MutableAttributeSet defaultStyle = document.getStyle(StyleContext.DEFAULT_STYLE);
+		StyleConstants.setAlignment(defaultStyle, StyleConstants.ALIGN_CENTER);
+		
+		JTextPane info = new JTextPane(document);
+		info.setEditable(false);
+		
+		
+		
+		info.setText("\n First Implementation of the  \n " +
+					"Medical Image Viewing Console \n" +
+					" by Team Petulant-Batman");
+		
+		
+		info.setSize(200, 200);
+		
+		aboutButtons.add(cool);
+		aboutInfo.add(info);
+		
+		aboutLayout.add(aboutButtons, BorderLayout.SOUTH);
+		aboutLayout.add(info, BorderLayout.CENTER);
+		
+		cool.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aboutFrame.dispose();
+				
+			}
+			
+		});
+		
+		aboutFrame.add(aboutLayout);
+		
+		aboutFrame.setVisible(true);
+		
+		
+		
+		
 	}
 	
 	public static void main(String [] args)
