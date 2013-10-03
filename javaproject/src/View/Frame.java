@@ -11,7 +11,6 @@ import Study.NoValidStudiesFoundException;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.jws.soap.SOAPBinding.Style;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -56,8 +54,6 @@ public class Frame extends JFrame {
 	private BasicArrowButton rightArrow;
 	private BasicArrowButton leftArrow;
 	private int curMode;
-	//private ArrayList<String> viewed;
-	//private ArrayList<String> upcoming;
 	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
 	
@@ -82,18 +78,17 @@ public class Frame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		mainLayout = new JPanel(new BorderLayout(20, 20));
 		curMode = 1;
-	//	viewed = new ArrayList<String>();
-	//	upcoming = new ArrayList<String>();
+		listOfStudies = null;
+		left = new LeftCommand();
+		right = new RightCommand();
+		changeState = new ChangeStateCommand();
+		saveStudy = new SaveStudyCommand();
 		setSize(900, 600);
 		buildMenuBar();
 		setResizable(false);
 		startUpScreen();
 		
 		
-		left = new LeftCommand();
-		right = new RightCommand();
-		changeState = new ChangeStateCommand();
-		saveStudy = new SaveStudyCommand();
 		
 		add(mainLayout);
 		setVisible(true);
