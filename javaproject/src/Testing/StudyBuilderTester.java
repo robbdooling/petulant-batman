@@ -15,6 +15,16 @@ public class StudyBuilderTester {
 	}
 	
 	public static void main(String[] args) {
+		boolean test = false;
+		
+		if (test) {
+			File f = new File("Z:\\workspace");
+			System.out.println(f.getPath());
+			
+			File f2 = new File(f.getPath()+"petulant-batman");
+			System.out.println(f2.getPath());
+		}
+		
 		if (WINDOWS) {
 			//StudyBuilder sb = new StudyBuilder("C:\\Studies", StudyBuilder.StudyType.local);
 			String root = "C:\\";

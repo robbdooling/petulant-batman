@@ -22,6 +22,8 @@ public interface Study {
 	 */
 	public String getName();
 	
+	public void saveState();
+	
 	public int getIndex();
 	public void setIndex(int newIndex);
 

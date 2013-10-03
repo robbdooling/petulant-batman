@@ -32,4 +32,9 @@ public class RemoteStudy implements Study {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public void saveState() {
+		return;
+	}
 }
