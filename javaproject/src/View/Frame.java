@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.jws.soap.SOAPBinding.Style;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,10 +25,16 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicArrowButton;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.MutableAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
+import javax.swing.text.StyledDocument;
 
 
 
@@ -243,7 +250,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				about();
 				
 			}
 			
@@ -634,6 +641,59 @@ public class Frame extends JFrame {
 		}
 		
 		return result;
+	}
+	
+	public void about()
+	{
+		final JFrame aboutFrame = new JFrame();
+		aboutFrame.setSize(300, 200);
+		aboutFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		JPanel aboutLayout = new JPanel(new BorderLayout());
+		JPanel aboutInfo = new JPanel(new FlowLayout());
+		JPanel aboutButtons = new JPanel(new FlowLayout());
+		
+		JButton cool = new JButton("Thats Fucking Awesome!");
+		
+		StyledDocument document = new DefaultStyledDocument();
+		MutableAttributeSet defaultStyle = document.getStyle(StyleContext.DEFAULT_STYLE);
+		StyleConstants.setAlignment(defaultStyle, StyleConstants.ALIGN_CENTER);
+		
+		JTextPane info = new JTextPane(document);
+		info.setEditable(false);
+		
+		
+		
+		info.setText("\n First Implementation of the  \n " +
+					"Medical Image Viewing Console \n" +
+					" by Team Petulant-Batman");
+		
+		
+		info.setSize(200, 200);
+		
+		aboutButtons.add(cool);
+		aboutInfo.add(info);
+		
+		aboutLayout.add(aboutButtons, BorderLayout.SOUTH);
+		aboutLayout.add(info, BorderLayout.CENTER);
+		
+		cool.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aboutFrame.dispose();
+				
+			}
+			
+		});
+		
+		aboutFrame.add(aboutLayout);
+		
+		aboutFrame.setVisible(true);
+		
+		
+		
+		
 	}
 	
 	public static void main(String [] args)
