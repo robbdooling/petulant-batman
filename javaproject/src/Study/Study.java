@@ -24,7 +24,11 @@ public interface Study {
 	
 	public String getMyPath();
 	
+	//Unclear if Study should be handling its current index or not...
+	//So for now, we have two possiblities
+	//I'm so, so sorry
 	public void saveState();
+	public void saveState(int index);
 	
 	public int getIndex();
 	public void setIndex(int newIndex);

@@ -1,7 +1,10 @@
 package Study;
 
+import State.*;
 import java.util.List;
-import java.io.FileWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class FileStudy implements Study {
 	
@@ -35,8 +38,70 @@ public class FileStudy implements Study {
 	
 	@Override
 	public void saveState() {
+
+		try {
+			File save = new File(myPath + File.separator + "0.sav");
+			if (!save.exists()) {
+				save.createNewFile();
+			}
+			FileOutputStream out = new FileOutputStream(save, false);
+			//don't forget to implement reading ZeroState in studybuilder
+			byte[] indexEntry = new String("index=" +
+				this.curIndex + "\n")
+				.getBytes();
+			
+			byte[] stateEntry = new String("state=" +
+				stateToString(StateHolder.getCurrentState()) + "\n")
+				.getBytes();
+			
+			out.write(indexEntry);
+			out.write(stateEntry);
+			out.close();
+		}
+		catch (IOException ioe) {
+			System.err.println("IOException in saveState()");
+		}
+	}
+	
+	@Override
+	public void saveState(int index) {
+		//because we don't know if the Study should manage its index yet,
+		//take an index int in case it's handled externally
 		
-		return;
+		try {
+			File save = new File(myPath + File.separator + "0.sav");
+			if (!save.exists()) {
+				save.createNewFile();
+			}
+			FileOutputStream out = new FileOutputStream(save, false);
+			//don't forget to implement reading ZeroState in studybuilder
+			byte[] indexEntry = new String("index=" +
+				index + "\n")
+				.getBytes();
+			
+			byte[] stateEntry = new String("state=" +
+				stateToString(StateHolder.getCurrentState()) + "\n")
+				.getBytes();
+			
+			out.write(indexEntry);
+			out.write(stateEntry);
+			out.close();
+		}
+		catch (IOException ioe) {
+			System.err.println("IOException in saveState()");
+		}
+	}
+	
+	private String stateToString(State state) {
+		if (state instanceof OneState) {
+			return "one";
+		}
+		else if (state instanceof FourState) {
+			return "four";
+		}
+		else {
+			return "zero";
+		}
 	}
 	
 	@Override

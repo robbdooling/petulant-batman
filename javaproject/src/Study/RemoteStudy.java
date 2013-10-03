@@ -42,4 +42,9 @@ public class RemoteStudy implements Study {
 	public void saveState() {
 		return;
 	}
+	
+	@Override
+	public void saveState(int index) {
+		return;
+	}
 }
