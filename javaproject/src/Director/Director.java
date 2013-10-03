@@ -38,9 +38,15 @@ public class Director {
 		study = availStudies.get(Index);
 	}
 	public static boolean isLeft(){
-		return true;
+		int currentIndex = study.getIndex();
+		int step = StateHolder.images();
+		return ((currentIndex - step) < 0);
 	}
 	public static boolean isRight(){
-		return true;
+		int currentIndex = study.getIndex();
+		int step = StateHolder.images();
+		int maxIndex = study.getImgAddresses().size();
+		
+		return ((currentIndex + step) > maxIndex);
 	}
 }
