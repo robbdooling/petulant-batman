@@ -38,11 +38,11 @@ public class FileStudy implements Study {
 	
 	@Override
 	public void saveState() {
-		System.out.println("Beginning to save state in dir: " + myPath);
+		//System.out.println("Beginning to save state in dir: " + myPath);
 		try {
 			File save = new File(myPath + File.separator + "0.sav");
 			if (!save.exists()) {
-				System.out.println("No save file found, creating new.");
+				//System.out.println("No save file found, creating new.");
 				save.createNewFile();
 			}
 			FileOutputStream out = new FileOutputStream(save, false);
@@ -51,18 +51,18 @@ public class FileStudy implements Study {
 				this.curIndex + "\n")
 				.getBytes();
 			
-			System.out.println(new String(indexEntry));
+			//System.out.println(new String(indexEntry));
 			
 			byte[] stateEntry = new String("state=" +
 				stateToString(StateHolder.images()) + "\n")
 				.getBytes();
 			
-			System.out.println(new String(stateEntry));
+			//System.out.println(new String(stateEntry));
 			
 			out.write(indexEntry);
 			out.write(stateEntry);
 			
-			System.out.println("Save file written.");
+			//System.out.println("Save file written.");
 			
 			out.close();
 		}
