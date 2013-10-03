@@ -51,7 +51,7 @@ public class FileStudy implements Study {
 				.getBytes();
 			
 			byte[] stateEntry = new String("state=" +
-				stateToString(StateHolder.getCurrentState()) + "\n")
+				stateToString(StateHolder.images()) + "\n")
 				.getBytes();
 			
 			out.write(indexEntry);
@@ -80,7 +80,7 @@ public class FileStudy implements Study {
 				.getBytes();
 			
 			byte[] stateEntry = new String("state=" +
-				stateToString(StateHolder.getCurrentState()) + "\n")
+				stateToString(StateHolder.images()) + "\n")
 				.getBytes();
 			
 			out.write(indexEntry);
@@ -92,11 +92,11 @@ public class FileStudy implements Study {
 		}
 	}
 	
-	private String stateToString(State state) {
-		if (state instanceof OneState) {
+	private String stateToString(int imgs) {
+		if (imgs == 1) {
 			return "one";
 		}
-		else if (state instanceof FourState) {
+		else if (imgs == 4) {
 			return "four";
 		}
 		else {
