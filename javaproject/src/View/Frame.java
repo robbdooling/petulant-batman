@@ -735,7 +735,7 @@ public class Frame extends JFrame {
 		JPanel aboutInfo = new JPanel(new FlowLayout());
 		JPanel aboutButtons = new JPanel(new FlowLayout());
 		
-		JButton cool = new JButton("Thats Fucking Awesome!");
+		JButton cool = new JButton("Thats Awesome!");
 		
 		StyledDocument document = new DefaultStyledDocument();
 		MutableAttributeSet defaultStyle = document.getStyle(StyleContext.DEFAULT_STYLE);
