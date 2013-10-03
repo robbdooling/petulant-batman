@@ -1,11 +1,13 @@
 package Command;
 
+import Director.Director;
+
 public class OpenStudyCommand implements Command {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		String StudyPath = Director.newStudyLocation();
+		
 	}
 
 }
