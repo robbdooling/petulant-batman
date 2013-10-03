@@ -5,6 +5,7 @@ import Command.LeftCommand;
 import Command.RightCommand;
 import Command.SaveStudyCommand;
 import Director.Director;
+import Study.NoValidStudiesFoundException;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -30,6 +31,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
@@ -61,7 +63,7 @@ public class Frame extends JFrame {
 	private RightCommand right;
 	private ChangeStateCommand changeState;
 	private SaveStudyCommand saveStudy;
-	
+	private JList<Object> listOfStudies = null;
 	
 	public Frame()
 	{
@@ -101,7 +103,20 @@ public class Frame extends JFrame {
 		final JFrame test = new JFrame();
 		test.setSize(500, 500);
 		test.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		JList<Object> listOfStudies = new JList<Object>(upcoming.toArray());
+		
+		try {
+			listOfStudies = new JList<Object>(Director.getAvailStudies().toArray());
+		} catch (NoValidStudiesFoundException e1) {
+			// TODO Auto-generated catch block
+			//e1.printStackTrace();
+			System.err.println("No Available Studies");
+			JFrame errorFrame = new JFrame();
+			JOptionPane.showMessageDialog(errorFrame, "No Available Studies, please select a different directory");
+			errorFrame.setVisible(true);
+		}
+		
+
+		JScrollPane listScroller = new JScrollPane(listOfStudies);
 		
 		JPanel availableStudyFrame = new JPanel(new BorderLayout());
 		JPanel buttonFlow = new JPanel(new FlowLayout());
@@ -113,14 +128,16 @@ public class Frame extends JFrame {
 		buttonFlow.add(cancle);
 		
 		availableStudyFrame.add(buttonFlow, BorderLayout.SOUTH);
-		availableStudyFrame.add(listOfStudies);
+		availableStudyFrame.add(listScroller);
 		
 		test.add(availableStudyFrame);
 		
 		select.addActionListener(new ActionListener(){
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				int index = listOfStudies.getSelectedIndex();
+				Director.choseStudy(index);
 				test.dispose();
 				
 			}
@@ -197,8 +214,16 @@ public class Frame extends JFrame {
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 					Director.setRoot(fc.getSelectedFile().getAbsolutePath());
 				} 
+				
+			}
+			
+		});
+		
+		openStudy.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				availableStudies();
-				singleTileMode();
 			}
 			
 		});
