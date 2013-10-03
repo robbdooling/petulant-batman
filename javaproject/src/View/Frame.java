@@ -58,7 +58,7 @@ public class Frame extends JFrame {
 	private BasicArrowButton leftArrow;
 	private int curMode;
 	//private ArrayList<String> viewed;
-	private ArrayList<String> upcoming;
+	//private ArrayList<String> upcoming;
 	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
 	
@@ -84,7 +84,7 @@ public class Frame extends JFrame {
 		mainLayout = new JPanel(new BorderLayout(20, 20));
 		curMode = 1;
 	//	viewed = new ArrayList<String>();
-		upcoming = new ArrayList<String>();
+	//	upcoming = new ArrayList<String>();
 		setSize(900, 600);
 		buildMenuBar();
 		setResizable(false);
@@ -125,10 +125,10 @@ public class Frame extends JFrame {
 		JPanel buttonFlow = new JPanel(new FlowLayout());
 		
 		JButton select = new JButton("Select");
-		JButton cancle = new JButton("Cancle");
+		JButton cancel = new JButton("Cancel");
 		
 		buttonFlow.add(select);
-		buttonFlow.add(cancle);
+		buttonFlow.add(cancel);
 		
 		availableStudyFrame.add(buttonFlow, BorderLayout.SOUTH);
 		availableStudyFrame.add(listScroller);
@@ -159,7 +159,7 @@ public class Frame extends JFrame {
 			
 		});
 		
-		cancle.addActionListener(new ActionListener(){
+		cancel.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -228,6 +228,7 @@ public class Frame extends JFrame {
 				//open();
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 					Director.setRoot(fc.getSelectedFile().getAbsolutePath());
+					availableStudies();
 				} 
 				
 			}
@@ -247,7 +248,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				saveStudy.execute();
 				
 			}
 			
@@ -518,35 +519,19 @@ public class Frame extends JFrame {
 		mainLayout.removeAll();
 		
 		// layouts for the startup screen which is empty
-		centerScreen = new JPanel(new GridLayout(2,2));
-//		JPanel topScreen = new JPanel(new FlowLayout());
+		centerScreen = new JPanel(new GridLayout(2,2, 10, 10));
+		JPanel topScreen = new JPanel(new FlowLayout());
 		JPanel leftScreen = new JPanel(new GridLayout(3,1));
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
 		
 		
-//		// buttons for startup screen
-//		JButton openStudy = new JButton("Open Study");
-//		JButton fourTile = new JButton("Four Tile Mode");
-//		JButton closeStudy = new JButton("Close Study");
-//		JButton save = new JButton("Save");
-//		JButton saveAs	= new JButton("Save As");
-		
 		// arrow Buttons
 		rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
 		leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
 		
-//		// action listeners 
-//		fourTile.addActionListener(new ActionListener()
-//		{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				fourTileMode();
-//				
-//			}
-//			
-//		});
+		// action listeners 
+
 		
 		//left and right button padding
 		Border leftPadding = BorderFactory.createEmptyBorder(0, 5, 0, 0);
@@ -750,7 +735,7 @@ public class Frame extends JFrame {
 		JPanel aboutInfo = new JPanel(new FlowLayout());
 		JPanel aboutButtons = new JPanel(new FlowLayout());
 		
-		JButton cool = new JButton("Thats Fucking Awesome!");
+		JButton cool = new JButton("Thats Awesome!");
 		
 		StyledDocument document = new DefaultStyledDocument();
 		MutableAttributeSet defaultStyle = document.getStyle(StyleContext.DEFAULT_STYLE);

@@ -37,19 +37,19 @@ public class Director {
 	 * @return the list of images to load
 	 */
 	public static List<String> getImages(){
-		List<String> poop = null;
+		List<String> images = null;
 		if(StateHolder.images() == 1){
-			poop = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
+			images = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
 		}
 		else if(StateHolder.images() == 4){
 			if((study.getIndex() + 4) > (study.getImgAddresses().size()-1)){
-				poop = study.getImgAddresses().subList(study.getIndex(), (study.getImgAddresses().size() - 1));
+				images = study.getImgAddresses().subList(study.getIndex(), (study.getImgAddresses().size()));
 			}
 			else{
-				poop = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));	
+				images = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));	
 			}
 		}
-		return poop;
+		return images;
 	}
 	/**
 	 * Set the root search directory to a different path
@@ -98,7 +98,7 @@ public class Director {
 		}
 		int currentIndex = study.getIndex();
 		int step = StateHolder.images();
-		return !((currentIndex - 2) < 0);
+		return !((currentIndex - 1) < 0);
 	}
 	/**
 	 * Indicates if there is anything to the "right"
@@ -112,6 +112,6 @@ public class Director {
 		int step = StateHolder.images();
 		int maxIndex = (study.getImgAddresses().size() - 1);
 		
-		return !((currentIndex + 2) > maxIndex);
+		return !((currentIndex + step) > maxIndex);
 	}
 }

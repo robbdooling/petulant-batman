@@ -17,7 +17,9 @@ public abstract class ReindexCommand implements Command {
 		if(direction() == -1 && (currentIndex - StateHolder.images()) < 0){
 			newIndex = 0;
 		}
-		newIndex = currentIndex + (StateHolder.images() * direction());
+		else{
+			newIndex = currentIndex + (StateHolder.images() * direction());
+		}
 		currentStudy.setIndex(newIndex);
 	}
 	abstract public int direction();
