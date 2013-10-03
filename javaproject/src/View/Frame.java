@@ -5,6 +5,7 @@ import Command.LeftCommand;
 import Command.RightCommand;
 import Command.SaveStudyCommand;
 import Director.Director;
+import State.StateHolder;
 import Study.NoValidStudiesFoundException;
 
 import java.awt.BorderLayout;
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.jws.soap.SOAPBinding.Style;
@@ -57,6 +59,7 @@ public class Frame extends JFrame {
 	private int curMode;
 	private ArrayList<String> viewed;
 	private ArrayList<String> upcoming;
+	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
 	
 	private LeftCommand left;
@@ -112,7 +115,7 @@ public class Frame extends JFrame {
 			System.err.println("No Available Studies");
 			JFrame errorFrame = new JFrame();
 			JOptionPane.showMessageDialog(errorFrame, "No Available Studies, please select a different directory");
-			errorFrame.setVisible(true);
+			return;
 		}
 		
 
@@ -138,6 +141,15 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int index = listOfStudies.getSelectedIndex();
 				Director.choseStudy(index);
+				if(StateHolder.images() == 4)
+				{
+					fourTileMode();
+				}
+				else
+				{
+					singleTileMode();
+				}
+				fillScreen(images);
 				test.dispose();
 				
 			}
@@ -273,7 +285,9 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				curMode = 4;
+				changeState.execute();
+				curMode = StateHolder.images();
+				images = Director.getImages();
 				fourTileMode();
 				
 			}
@@ -284,7 +298,9 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				curMode = 1;
+				changeState.execute();
+				curMode = StateHolder.images();
+				images = Director.getImages();
 				singleTileMode();
 				
 			}
@@ -414,6 +430,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				left.execute();
 				fillScreen(right());
 				rightArrow.setEnabled(Director.isRight());
 				leftArrow.setEnabled(Director.isLeft());
@@ -425,6 +442,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				right.execute();
 				fillScreen(left());
 				rightArrow.setEnabled(Director.isRight());
 				leftArrow.setEnabled(Director.isLeft());
@@ -649,14 +667,14 @@ public class Frame extends JFrame {
 	
 	
 	
-	public JButton openImage(String filePath)
+	public JLabel openImage(String filePath)
 	{
-		JButton icon = new JButton(new ImageIcon(filePath));
+		JLabel icon = new JLabel(new ImageIcon(filePath));
 		
 		return icon;
 	}
 	
-	public void fillScreen(ArrayList<String> images)
+	public void fillScreen(List<String> images)
 	{
 		centerScreen.removeAll();
 		for(String paths: images)
