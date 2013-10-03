@@ -13,12 +13,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -464,7 +459,6 @@ public class Frame extends JFrame {
 		
 		// layouts for the startup screen which is empty
 		centerScreen = new JPanel(new GridLayout(2,2, 10, 10));
-		JPanel topScreen = new JPanel(new FlowLayout());
 		JPanel leftScreen = new JPanel(new GridLayout(3,1));
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
