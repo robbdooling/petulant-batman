@@ -252,8 +252,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				startUpScreen();
-				
+				promptSave(0);
 			}
 			
 		});
@@ -262,7 +261,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.exit(EXIT_ON_CLOSE);
+				promptSave(1);
 				
 			}
 			
@@ -522,6 +521,85 @@ public class Frame extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
+	public void promptSave(final int flag)
+	{
+		final JFrame savePrompt = new JFrame();
+		savePrompt.setSize(350,100);
+		savePrompt.setResizable(false);
+		
+		JPanel promptLayout = new JPanel(new BorderLayout());
+		JPanel centerFlow = new JPanel(new FlowLayout());
+		JPanel buttonFlow = new JPanel(new FlowLayout());
+		
+		JLabel notSaved = new JLabel("Warning! Your current state is not saved");
+		
+		JButton closeAnyway = new JButton("Close Anyway");
+		JButton saveNow = new JButton("Save");
+		JButton cancelNow = new JButton("Cancel");
+		
+		centerFlow.add(notSaved);
+		buttonFlow.add(closeAnyway);
+		buttonFlow.add(saveNow);
+		buttonFlow.add(cancelNow);
+		
+		promptLayout.add(centerFlow, BorderLayout.CENTER);
+		promptLayout.add(buttonFlow, BorderLayout.SOUTH);
+		
+		savePrompt.add(promptLayout);
+		
+		closeAnyway.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				savePrompt.dispose();
+				if(flag == 0)
+				{
+					startUpScreen();
+				}
+				else
+				{
+					System.exit(EXIT_ON_CLOSE);
+				}
+			}
+			
+			
+		});
+		
+		saveNow.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				saveStudy.execute();
+				if(flag == 0)
+				{
+					startUpScreen();
+				}
+				else
+				{
+					System.exit(EXIT_ON_CLOSE);
+				}
+				savePrompt.dispose();
+			}
+			
+			
+		});
+		
+		cancelNow.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				savePrompt.dispose();
+				
+			}
+			
+			
+		});
+		
+		savePrompt.setVisible(true);
+		
+		
+	}
 	
 	public JLabel openImage(String filePath)
 	{
