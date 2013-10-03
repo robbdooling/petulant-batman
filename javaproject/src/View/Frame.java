@@ -345,29 +345,12 @@ public class Frame extends JFrame {
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
 		
-		
-//		// buttons for startup screen
-//		JButton openStudy = new JButton("Open Study");
-//		JButton fourTile = new JButton("Four Tile Mode");
-//		JButton closeStudy = new JButton("Close Study");
-//		JButton save = new JButton("Save");
-//		JButton saveAs	= new JButton("Save As");
-		
 		// arrow Buttons
 		BasicArrowButton rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
 		BasicArrowButton leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
 		
-//		// action listeners 
-//		fourTile.addActionListener(new ActionListener()
-//		{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				fourTileMode();
-//				
-//			}
-//			
-//		});
+		// action listeners 
+
 		
 		//left and right button padding
 		Border leftPadding = BorderFactory.createEmptyBorder(0, 5, 0, 0);
@@ -380,14 +363,6 @@ public class Frame extends JFrame {
 		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
-		
-	
 		leftScreen.add(new JLabel(""));
 		leftScreen.add(leftArrow);
 		
@@ -420,14 +395,6 @@ public class Frame extends JFrame {
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
 		
-		
-//		// buttons for startup screen
-//		JButton openStudy = new JButton("Open Study");
-//		JButton fourTile = new JButton("Four Tile Mode");
-//		JButton closeStudy = new JButton("Close Study");
-//		JButton save = new JButton("Save");
-//		JButton saveAs	= new JButton("Save As");
-		
 		// arrow Buttons
 		rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
 		leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
@@ -458,16 +425,6 @@ public class Frame extends JFrame {
 			}
 			
 		});
-//		fourTile.addActionListener(new ActionListener()
-//		{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				fourTileMode();
-//				
-//			}
-//			
-//		});
 		
 		//left and right button padding
 		Border leftPadding = BorderFactory.createEmptyBorder(0, 5, 0, 0);
@@ -483,13 +440,6 @@ public class Frame extends JFrame {
 		
 		
 		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
-		
 		
 		leftScreen.add(new JLabel(""));
 		leftScreen.add(leftArrow);
@@ -543,14 +493,6 @@ public class Frame extends JFrame {
 		rightArrow.setEnabled(Director.isRight());
 		leftArrow.setEnabled(Director.isLeft());
 		
-		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
-		
 	
 		leftScreen.add(new JLabel(""));
 		leftScreen.add(leftArrow);
@@ -597,93 +539,6 @@ public class Frame extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
-	public void addToScreen()
-	{
-		
-	}
-	
-//	public void open(String directory)
-//	{
-//		viewed = new ArrayList<String>();
-//		upcoming = new ArrayList<String>();
-//		
-//		File dir = new File(directory);
-//		int curFile = 0;
-//		
-//		for (File child : dir.listFiles())
-//		{
-//		    if(child.getName().toLowerCase().endsWith(".jpg"))
-//		    {
-//		    	if(curFile == 0)
-//		    	{
-//		    		viewed.add(child.getAbsolutePath());
-//		    	}
-//		    	else
-//		    	{
-//		    		upcoming.add(child.getAbsolutePath());
-//		    	}
-//		    	++curFile;
-//		    }
-//		}
-//	}
-	
-//	public ArrayList<String> right()
-//	{
-//		ArrayList<String> tempArray = new ArrayList<String>();
-//		
-//		if(curMode > upcoming.size())
-//		{
-//			int size = upcoming.size();
-//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-//			{
-//				String curPath = upcoming.get(0);
-//				tempArray.add(curPath);
-//				viewed.add(0, curPath);
-//				upcoming.remove(0);
-//			}
-//		}
-//		else
-//		{
-//			for(int images = 0; images < curMode; ++images)
-//			{
-//				String curPath = upcoming.get(0);
-//				tempArray.add(curPath);
-//				viewed.add(0, curPath);
-//				upcoming.remove(0);
-//			}
-//		}
-//		return tempArray;
-//	}
-	
-//	public ArrayList<String> left()
-//	{
-//		ArrayList<String> tempArray = new ArrayList<String>();
-//		
-//		if(curMode > viewed.size())
-//		{
-//			int size = viewed.size();
-//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-//			{
-//				String curPath = viewed.get(0);
-//				tempArray.add(curPath);
-//				upcoming.add(0, curPath);
-//				viewed.remove(0);
-//			}
-//		}
-//		else
-//		{
-//			for(int images = 0; images < curMode; ++images)
-//			{
-//				String curPath = viewed.get(0);
-//				tempArray.add(curPath);
-//				upcoming.add(0, curPath);
-//				viewed.remove(0);
-//			}
-//		}
-//		return tempArray;
-//	}
-//	
-//	
 	
 	public JLabel openImage(String filePath)
 	{
@@ -702,29 +557,7 @@ public class Frame extends JFrame {
 		
 		SwingUtilities.updateComponentTreeUI(this);
 	}
-	
-//	public boolean isEnabled(int flag)
-//	{
-//		boolean result = true;
-//		
-//		if(flag == 0)
-//		{
-//			if(upcoming.size() < 1)
-//			{
-//				result = false;
-//			}
-//		}
-//		else
-//		{
-//			if(viewed.size() < 2)
-//			{
-//				result = false;
-//			}
-//		}
-//		
-//		return result;
-//	}
-//	
+
 	public void about()
 	{
 		final JFrame aboutFrame = new JFrame();
