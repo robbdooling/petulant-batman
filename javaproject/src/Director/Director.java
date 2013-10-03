@@ -36,8 +36,19 @@ public class Director {
 	 * @return the list of images to load
 	 */
 	public static List<String> getImages(){
-		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
-		
+		List<String> poop = null;
+		if(StateHolder.images() == 1){
+			poop = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
+		}
+		else if(StateHolder.images() == 4){
+			if((study.getIndex() + 4) > (study.getImgAddresses().size()-1)){
+				poop = study.getImgAddresses().subList(study.getIndex(), (study.getImgAddresses().size() - 1));
+			}
+			else{
+				poop = study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));	
+			}
+		}
+		return poop;
 	}
 	/**
 	 * Set the root search directory to a different path
