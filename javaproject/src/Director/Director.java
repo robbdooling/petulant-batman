@@ -65,6 +65,8 @@ public class Director {
 	 */
 	public static void choseStudy(int Index){
 		study = availStudies.get(Index);
+		StateHolder.empty();
+		StateHolder.next();
 	}
 	/**
 	 * Indicates if there is anything to the "left"
