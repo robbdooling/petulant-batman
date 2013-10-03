@@ -4,6 +4,7 @@ import Command.ChangeStateCommand;
 import Command.LeftCommand;
 import Command.RightCommand;
 import Command.SaveStudyCommand;
+import Director.Director;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -83,6 +84,13 @@ public class Frame extends JFrame {
 		buildMenuBar();
 		setResizable(false);
 		startUpScreen();
+		
+		
+		left = new LeftCommand();
+		right = new RightCommand();
+		changeState = new ChangeStateCommand();
+		saveStudy = new SaveStudyCommand();
+		
 		add(mainLayout);
 		setVisible(true);
 	}
@@ -145,7 +153,7 @@ public class Frame extends JFrame {
 		JMenuItem info = new JMenu("Info");
 		
 		//create file menu items
-		JMenuItem open = new JMenuItem("Open");
+		JMenuItem selectDirectory = new JMenuItem("Select Directory");
 		JMenuItem save = new JMenuItem("Save");
 		JMenuItem saveAs = new JMenuItem("Save As");
 		JMenuItem close = new JMenuItem("Close Study");
@@ -319,8 +327,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
 //		topScreen.add(openStudy);
@@ -381,8 +389,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fillScreen(right());
-				rightArrow.setEnabled(isEnabled(0));
-				leftArrow.setEnabled(isEnabled(1));
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
 			}
 			
 		});
@@ -392,8 +400,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fillScreen(left());
-				rightArrow.setEnabled(isEnabled(0));
-				leftArrow.setEnabled(isEnabled(1));
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
 			}
 			
 		});
@@ -417,8 +425,8 @@ public class Frame extends JFrame {
 		
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		
 		// add to layouts
@@ -495,8 +503,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(isEnabled(0));
-		leftArrow.setEnabled(isEnabled(1));
+		rightArrow.setEnabled(Director.isRight());
+		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
 //		topScreen.add(openStudy);
@@ -633,28 +641,28 @@ public class Frame extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
-	public boolean isEnabled(int flag)
-	{
-		boolean result = true;
-		
-		if(flag == 0)
-		{
-			if(upcoming.size() < 1)
-			{
-				result = false;
-			}
-		}
-		else
-		{
-			if(viewed.size() < 2)
-			{
-				result = false;
-			}
-		}
-		
-		return result;
-	}
-	
+//	public boolean isEnabled(int flag)
+//	{
+//		boolean result = true;
+//		
+//		if(flag == 0)
+//		{
+//			if(upcoming.size() < 1)
+//			{
+//				result = false;
+//			}
+//		}
+//		else
+//		{
+//			if(viewed.size() < 2)
+//			{
+//				result = false;
+//			}
+//		}
+//		
+//		return result;
+//	}
+//	
 	public void about()
 	{
 		final JFrame aboutFrame = new JFrame();
