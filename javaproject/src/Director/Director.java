@@ -112,6 +112,6 @@ public class Director {
 		int step = StateHolder.images();
 		int maxIndex = (study.getImgAddresses().size() - 1);
 		
-		return !((currentIndex + 1) > maxIndex);
+		return !((currentIndex + step) > maxIndex);
 	}
 }
