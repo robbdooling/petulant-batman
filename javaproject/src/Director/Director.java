@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import State.StateHolder;
+import State.State;
 import Study.NoValidStudiesFoundException;
 import Study.Study;
 import Study.StudyBuilder;
@@ -76,8 +77,16 @@ public class Director {
 	 */
 	public static void choseStudy(int Index){
 		study = availStudies.get(Index);
-		StateHolder.empty();
-		StateHolder.next();
+		State s = StudyBuilder.readState(study.getMyPath());
+		if (s == null) {
+			StateHolder.empty();
+			StateHolder.next();
+		}
+		else {
+			while (StateHolder.images() != s.images()) {
+				StateHolder.next();
+			}
+		}
 	}
 	/**
 	 * Indicates if there is anything to the "left"

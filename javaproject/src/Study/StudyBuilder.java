@@ -94,7 +94,7 @@ public class StudyBuilder {
 			sc.close();
 		}
 		catch(FileNotFoundException fnfe) {
-			System.err.println("No save file found.");
+			System.out.println("No save file found.");
 			return null;
 		}
 		
