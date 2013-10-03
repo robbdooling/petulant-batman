@@ -20,7 +20,7 @@ public class Director {
 		study = newStudy;
 	}
 	public static List<String> getImages(){
-		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images()));
+		return study.getImgAddresses().subList(study.getIndex(), (study.getIndex() + StateHolder.images() - 1));
 		
 	}
 	public static void setRoot(String newRoot){
