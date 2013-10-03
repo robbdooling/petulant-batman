@@ -71,17 +71,48 @@ public class Frame extends JFrame {
 	
 	public void availableStudies()
 	{
-		JOptionPane studyList = new JOptionPane();
-		JFrame test = new JFrame();
-		test.setSize(500, 500);
 		
-		@SuppressWarnings("unchecked")
+		final JFrame test = new JFrame();
+		test.setSize(500, 500);
+		test.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		JList<Object> listOfStudies = new JList<Object>(upcoming.toArray());
 		
-		test.add(listOfStudies);
-		studyList.add(test);
+		JPanel availableStudyFrame = new JPanel(new BorderLayout());
+		JPanel buttonFlow = new JPanel(new FlowLayout());
 		
-		studyList.setVisible(true);
+		JButton select = new JButton("Select");
+		JButton cancle = new JButton("Cancle");
+		
+		buttonFlow.add(select);
+		buttonFlow.add(cancle);
+		
+		availableStudyFrame.add(buttonFlow, BorderLayout.SOUTH);
+		availableStudyFrame.add(listOfStudies);
+		
+		test.add(availableStudyFrame);
+		
+		select.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				test.dispose();
+				
+			}
+			
+		});
+		
+		cancle.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				test.dispose();
+				
+			}
+			
+		});
+		
+		
+		test.setVisible(true);
 		
 	}
 	
