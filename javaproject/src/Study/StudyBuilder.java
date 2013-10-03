@@ -15,6 +15,8 @@ package Study;
  * 
  */
 
+import State.*;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +29,6 @@ import java.util.regex.*;
 public class StudyBuilder {
 	
 	public enum StudyType { remote, local; }
-	
 	
 	private StudyBuilder() { }
 	
@@ -48,6 +49,38 @@ public class StudyBuilder {
 			//return empty local study
 			return new FileStudy[]{};
 		}
+	}
+	
+	public static State readState(String studyDir) {
+		
+		File f = new File(studyDir + File.separator + "0.sav");
+		
+		try {
+			Scanner sc = new Scanner(f);
+			while (sc.hasNextLine()) {
+				String[] pair = sc.nextLine().split("=");
+				if (pair[0].equals("state")) {
+					if (pair[1].equals("one")) {
+						return new OneState();
+					}
+					else if (pair[1].equals("four")) {
+						return new FourState();
+					}
+					else {
+						System.err.println("Invalid state read.");
+						return null;
+					}
+				}
+			}
+			sc.close();
+		}
+		catch(FileNotFoundException fnfe) {
+			System.err.println("No save file found.");
+			return null;
+		}
+		
+		System.err.println("Found no state information in study .sav file");
+		return null;
 	}
 	
 	private static FileStudy[] findLocalStudies(String rootDir, StudyType studyType)

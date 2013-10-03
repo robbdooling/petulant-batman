@@ -2,8 +2,9 @@ package Director;
 
 import java.util.List;
 
-import State.StateHolder;
-import Study.Study;
+import State.*;
+import Study.*;
+
 public class Director {
 	private static Study study = null;
 	public static Study getStudy(){
