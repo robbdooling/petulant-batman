@@ -7,20 +7,12 @@ import Command.SaveStudyCommand;
 import Director.Director;
 import State.StateHolder;
 import Study.NoValidStudiesFoundException;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.ImageIO;
-import javax.jws.soap.SOAPBinding.Style;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -34,7 +26,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -57,16 +48,13 @@ public class Frame extends JFrame {
 	private BasicArrowButton rightArrow;
 	private BasicArrowButton leftArrow;
 	private int curMode;
-	//private ArrayList<String> viewed;
-	//private ArrayList<String> upcoming;
 	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
-	
 	private LeftCommand left;
 	private RightCommand right;
 	private ChangeStateCommand changeState;
 	private SaveStudyCommand saveStudy;
-	private JList<Object> listOfStudies = null;
+	private JList<Object> listOfStudies;
 	
 	public Frame()
 	{
@@ -83,18 +71,17 @@ public class Frame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		mainLayout = new JPanel(new BorderLayout(20, 20));
 		curMode = 1;
-	//	viewed = new ArrayList<String>();
-	//	upcoming = new ArrayList<String>();
+		listOfStudies = null;
+		left = new LeftCommand();
+		right = new RightCommand();
+		changeState = new ChangeStateCommand();
+		saveStudy = new SaveStudyCommand();
 		setSize(900, 600);
 		buildMenuBar();
 		setResizable(false);
 		startUpScreen();
 		
 		
-		left = new LeftCommand();
-		right = new RightCommand();
-		changeState = new ChangeStateCommand();
-		saveStudy = new SaveStudyCommand();
 		
 		add(mainLayout);
 		setVisible(true);
@@ -110,8 +97,6 @@ public class Frame extends JFrame {
 		try {
 			listOfStudies = new JList<Object>(Director.getAvailStudies().toArray());
 		} catch (NoValidStudiesFoundException e1) {
-			// TODO Auto-generated catch block
-			//e1.printStackTrace();
 			System.err.println("No Available Studies");
 			JFrame errorFrame = new JFrame();
 			JOptionPane.showMessageDialog(errorFrame, "No Available Studies, please select a different directory");
@@ -151,7 +136,6 @@ public class Frame extends JFrame {
 					singleTileMode();
 				}
 				images = Director.getImages();
-				System.out.println(images.size());
 				fillScreen(images);
 				test.dispose();
 				
@@ -268,8 +252,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				startUpScreen();
-				
+				promptSave(0);
 			}
 			
 		});
@@ -278,7 +261,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.exit(EXIT_ON_CLOSE);
+				promptSave(1);
 				
 			}
 			
@@ -345,29 +328,12 @@ public class Frame extends JFrame {
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
 		
-		
-//		// buttons for startup screen
-//		JButton openStudy = new JButton("Open Study");
-//		JButton fourTile = new JButton("Four Tile Mode");
-//		JButton closeStudy = new JButton("Close Study");
-//		JButton save = new JButton("Save");
-//		JButton saveAs	= new JButton("Save As");
-		
 		// arrow Buttons
 		BasicArrowButton rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
 		BasicArrowButton leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
 		
-//		// action listeners 
-//		fourTile.addActionListener(new ActionListener()
-//		{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				fourTileMode();
-//				
-//			}
-//			
-//		});
+		// action listeners 
+
 		
 		//left and right button padding
 		Border leftPadding = BorderFactory.createEmptyBorder(0, 5, 0, 0);
@@ -380,14 +346,6 @@ public class Frame extends JFrame {
 		leftArrow.setEnabled(Director.isLeft());
 		
 		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
-		
-	
 		leftScreen.add(new JLabel(""));
 		leftScreen.add(leftArrow);
 		
@@ -420,14 +378,6 @@ public class Frame extends JFrame {
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
 		
-		
-//		// buttons for startup screen
-//		JButton openStudy = new JButton("Open Study");
-//		JButton fourTile = new JButton("Four Tile Mode");
-//		JButton closeStudy = new JButton("Close Study");
-//		JButton save = new JButton("Save");
-//		JButton saveAs	= new JButton("Save As");
-		
 		// arrow Buttons
 		rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
 		leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
@@ -458,16 +408,6 @@ public class Frame extends JFrame {
 			}
 			
 		});
-//		fourTile.addActionListener(new ActionListener()
-//		{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				fourTileMode();
-//				
-//			}
-//			
-//		});
 		
 		//left and right button padding
 		Border leftPadding = BorderFactory.createEmptyBorder(0, 5, 0, 0);
@@ -483,13 +423,6 @@ public class Frame extends JFrame {
 		
 		
 		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
-		
 		
 		leftScreen.add(new JLabel(""));
 		leftScreen.add(leftArrow);
@@ -520,7 +453,6 @@ public class Frame extends JFrame {
 		
 		// layouts for the startup screen which is empty
 		centerScreen = new JPanel(new GridLayout(2,2, 10, 10));
-		JPanel topScreen = new JPanel(new FlowLayout());
 		JPanel leftScreen = new JPanel(new GridLayout(3,1));
 		JPanel rightScreen = new JPanel(new GridLayout(3,1));
 		JPanel bottomScreen = new JPanel(new FlowLayout());
@@ -542,14 +474,6 @@ public class Frame extends JFrame {
 		// enable left and right buttons
 		rightArrow.setEnabled(Director.isRight());
 		leftArrow.setEnabled(Director.isLeft());
-		
-		// add to layouts
-//		topScreen.add(openStudy);
-//		topScreen.add(save);
-//		topScreen.add(saveAs);
-//		topScreen.add(fourTile);
-//		topScreen.add(closeStudy);
-		
 		
 	
 		leftScreen.add(new JLabel(""));
@@ -597,93 +521,85 @@ public class Frame extends JFrame {
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
-	public void addToScreen()
+	public void promptSave(final int flag)
 	{
+		final JFrame savePrompt = new JFrame();
+		savePrompt.setSize(350,100);
+		savePrompt.setResizable(false);
+		
+		JPanel promptLayout = new JPanel(new BorderLayout());
+		JPanel centerFlow = new JPanel(new FlowLayout());
+		JPanel buttonFlow = new JPanel(new FlowLayout());
+		
+		JLabel notSaved = new JLabel("Warning! Your current state is not saved");
+		
+		JButton closeAnyway = new JButton("Close Anyway");
+		JButton saveNow = new JButton("Save");
+		JButton cancelNow = new JButton("Cancel");
+		
+		centerFlow.add(notSaved);
+		buttonFlow.add(closeAnyway);
+		buttonFlow.add(saveNow);
+		buttonFlow.add(cancelNow);
+		
+		promptLayout.add(centerFlow, BorderLayout.CENTER);
+		promptLayout.add(buttonFlow, BorderLayout.SOUTH);
+		
+		savePrompt.add(promptLayout);
+		
+		closeAnyway.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				savePrompt.dispose();
+				if(flag == 0)
+				{
+					startUpScreen();
+				}
+				else
+				{
+					System.exit(EXIT_ON_CLOSE);
+				}
+			}
+			
+			
+		});
+		
+		saveNow.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				saveStudy.execute();
+				if(flag == 0)
+				{
+					startUpScreen();
+				}
+				else
+				{
+					System.exit(EXIT_ON_CLOSE);
+				}
+				savePrompt.dispose();
+			}
+			
+			
+		});
+		
+		cancelNow.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				savePrompt.dispose();
+				
+			}
+			
+			
+		});
+		
+		savePrompt.setVisible(true);
+		
 		
 	}
-	
-//	public void open(String directory)
-//	{
-//		viewed = new ArrayList<String>();
-//		upcoming = new ArrayList<String>();
-//		
-//		File dir = new File(directory);
-//		int curFile = 0;
-//		
-//		for (File child : dir.listFiles())
-//		{
-//		    if(child.getName().toLowerCase().endsWith(".jpg"))
-//		    {
-//		    	if(curFile == 0)
-//		    	{
-//		    		viewed.add(child.getAbsolutePath());
-//		    	}
-//		    	else
-//		    	{
-//		    		upcoming.add(child.getAbsolutePath());
-//		    	}
-//		    	++curFile;
-//		    }
-//		}
-//	}
-	
-//	public ArrayList<String> right()
-//	{
-//		ArrayList<String> tempArray = new ArrayList<String>();
-//		
-//		if(curMode > upcoming.size())
-//		{
-//			int size = upcoming.size();
-//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-//			{
-//				String curPath = upcoming.get(0);
-//				tempArray.add(curPath);
-//				viewed.add(0, curPath);
-//				upcoming.remove(0);
-//			}
-//		}
-//		else
-//		{
-//			for(int images = 0; images < curMode; ++images)
-//			{
-//				String curPath = upcoming.get(0);
-//				tempArray.add(curPath);
-//				viewed.add(0, curPath);
-//				upcoming.remove(0);
-//			}
-//		}
-//		return tempArray;
-//	}
-	
-//	public ArrayList<String> left()
-//	{
-//		ArrayList<String> tempArray = new ArrayList<String>();
-//		
-//		if(curMode > viewed.size())
-//		{
-//			int size = viewed.size();
-//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-//			{
-//				String curPath = viewed.get(0);
-//				tempArray.add(curPath);
-//				upcoming.add(0, curPath);
-//				viewed.remove(0);
-//			}
-//		}
-//		else
-//		{
-//			for(int images = 0; images < curMode; ++images)
-//			{
-//				String curPath = viewed.get(0);
-//				tempArray.add(curPath);
-//				upcoming.add(0, curPath);
-//				viewed.remove(0);
-//			}
-//		}
-//		return tempArray;
-//	}
-//	
-//	
 	
 	public JLabel openImage(String filePath)
 	{
@@ -702,29 +618,7 @@ public class Frame extends JFrame {
 		
 		SwingUtilities.updateComponentTreeUI(this);
 	}
-	
-//	public boolean isEnabled(int flag)
-//	{
-//		boolean result = true;
-//		
-//		if(flag == 0)
-//		{
-//			if(upcoming.size() < 1)
-//			{
-//				result = false;
-//			}
-//		}
-//		else
-//		{
-//			if(viewed.size() < 2)
-//			{
-//				result = false;
-//			}
-//		}
-//		
-//		return result;
-//	}
-//	
+
 	public void about()
 	{
 		final JFrame aboutFrame = new JFrame();
