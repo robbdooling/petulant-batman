@@ -57,7 +57,7 @@ public class Frame extends JFrame {
 	private BasicArrowButton rightArrow;
 	private BasicArrowButton leftArrow;
 	private int curMode;
-	private ArrayList<String> viewed;
+	//private ArrayList<String> viewed;
 	private ArrayList<String> upcoming;
 	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
@@ -83,7 +83,7 @@ public class Frame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		mainLayout = new JPanel(new BorderLayout(20, 20));
 		curMode = 1;
-		viewed = new ArrayList<String>();
+	//	viewed = new ArrayList<String>();
 		upcoming = new ArrayList<String>();
 		setSize(900, 600);
 		buildMenuBar();
@@ -141,6 +141,7 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int index = listOfStudies.getSelectedIndex();
 				Director.choseStudy(index);
+				
 				if(StateHolder.images() == 4)
 				{
 					fourTileMode();
@@ -149,6 +150,8 @@ public class Frame extends JFrame {
 				{
 					singleTileMode();
 				}
+				images = Director.getImages();
+				System.out.println(images.size());
 				fillScreen(images);
 				test.dispose();
 				
@@ -288,6 +291,7 @@ public class Frame extends JFrame {
 				changeState.execute();
 				curMode = StateHolder.images();
 				images = Director.getImages();
+				System.out.println(images.size());
 				fourTileMode();
 				
 			}
@@ -431,7 +435,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				left.execute();
-				fillScreen(right());
+				images = Director.getImages();
+				fillScreen(images);
 				rightArrow.setEnabled(Director.isRight());
 				leftArrow.setEnabled(Director.isLeft());
 			}
@@ -443,7 +448,8 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				right.execute();
-				fillScreen(left());
+				images = Director.getImages();
+				fillScreen(images);
 				rightArrow.setEnabled(Director.isRight());
 				leftArrow.setEnabled(Director.isLeft());
 			}
@@ -584,88 +590,88 @@ public class Frame extends JFrame {
 		
 	}
 	
-	public void open(String directory)
-	{
-		viewed = new ArrayList<String>();
-		upcoming = new ArrayList<String>();
-		
-		File dir = new File(directory);
-		int curFile = 0;
-		
-		for (File child : dir.listFiles())
-		{
-		    if(child.getName().toLowerCase().endsWith(".jpg"))
-		    {
-		    	if(curFile == 0)
-		    	{
-		    		viewed.add(child.getAbsolutePath());
-		    	}
-		    	else
-		    	{
-		    		upcoming.add(child.getAbsolutePath());
-		    	}
-		    	++curFile;
-		    }
-		}
-	}
+//	public void open(String directory)
+//	{
+//		viewed = new ArrayList<String>();
+//		upcoming = new ArrayList<String>();
+//		
+//		File dir = new File(directory);
+//		int curFile = 0;
+//		
+//		for (File child : dir.listFiles())
+//		{
+//		    if(child.getName().toLowerCase().endsWith(".jpg"))
+//		    {
+//		    	if(curFile == 0)
+//		    	{
+//		    		viewed.add(child.getAbsolutePath());
+//		    	}
+//		    	else
+//		    	{
+//		    		upcoming.add(child.getAbsolutePath());
+//		    	}
+//		    	++curFile;
+//		    }
+//		}
+//	}
 	
-	public ArrayList<String> right()
-	{
-		ArrayList<String> tempArray = new ArrayList<String>();
-		
-		if(curMode > upcoming.size())
-		{
-			int size = upcoming.size();
-			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-			{
-				String curPath = upcoming.get(0);
-				tempArray.add(curPath);
-				viewed.add(0, curPath);
-				upcoming.remove(0);
-			}
-		}
-		else
-		{
-			for(int images = 0; images < curMode; ++images)
-			{
-				String curPath = upcoming.get(0);
-				tempArray.add(curPath);
-				viewed.add(0, curPath);
-				upcoming.remove(0);
-			}
-		}
-		return tempArray;
-	}
+//	public ArrayList<String> right()
+//	{
+//		ArrayList<String> tempArray = new ArrayList<String>();
+//		
+//		if(curMode > upcoming.size())
+//		{
+//			int size = upcoming.size();
+//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
+//			{
+//				String curPath = upcoming.get(0);
+//				tempArray.add(curPath);
+//				viewed.add(0, curPath);
+//				upcoming.remove(0);
+//			}
+//		}
+//		else
+//		{
+//			for(int images = 0; images < curMode; ++images)
+//			{
+//				String curPath = upcoming.get(0);
+//				tempArray.add(curPath);
+//				viewed.add(0, curPath);
+//				upcoming.remove(0);
+//			}
+//		}
+//		return tempArray;
+//	}
 	
-	public ArrayList<String> left()
-	{
-		ArrayList<String> tempArray = new ArrayList<String>();
-		
-		if(curMode > viewed.size())
-		{
-			int size = viewed.size();
-			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
-			{
-				String curPath = viewed.get(0);
-				tempArray.add(curPath);
-				upcoming.add(0, curPath);
-				viewed.remove(0);
-			}
-		}
-		else
-		{
-			for(int images = 0; images < curMode; ++images)
-			{
-				String curPath = viewed.get(0);
-				tempArray.add(curPath);
-				upcoming.add(0, curPath);
-				viewed.remove(0);
-			}
-		}
-		return tempArray;
-	}
-	
-	
+//	public ArrayList<String> left()
+//	{
+//		ArrayList<String> tempArray = new ArrayList<String>();
+//		
+//		if(curMode > viewed.size())
+//		{
+//			int size = viewed.size();
+//			for(int imagePaths = 0; imagePaths < size; ++imagePaths)
+//			{
+//				String curPath = viewed.get(0);
+//				tempArray.add(curPath);
+//				upcoming.add(0, curPath);
+//				viewed.remove(0);
+//			}
+//		}
+//		else
+//		{
+//			for(int images = 0; images < curMode; ++images)
+//			{
+//				String curPath = viewed.get(0);
+//				tempArray.add(curPath);
+//				upcoming.add(0, curPath);
+//				viewed.remove(0);
+//			}
+//		}
+//		return tempArray;
+//	}
+//	
+//	
 	
 	public JLabel openImage(String filePath)
 	{
@@ -674,10 +680,10 @@ public class Frame extends JFrame {
 		return icon;
 	}
 	
-	public void fillScreen(List<String> images)
+	public void fillScreen(List<String> listOfImages)
 	{
 		centerScreen.removeAll();
-		for(String paths: images)
+		for(String paths: listOfImages)
 		{
 			centerScreen.add(openImage(paths));
 		}
