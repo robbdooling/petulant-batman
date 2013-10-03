@@ -37,4 +37,10 @@ public class Director {
 	public static void choseStudy(int Index){
 		study = availStudies.get(Index);
 	}
+	public static boolean isLeft(){
+		return true;
+	}
+	public static boolean isRight(){
+		return true;
+	}
 }
