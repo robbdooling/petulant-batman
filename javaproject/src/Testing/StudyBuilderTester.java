@@ -16,12 +16,13 @@ public class StudyBuilderTester {
 	
 	public static void main(String[] args) {
 		if (WINDOWS) {
-			StudyBuilder sb = new StudyBuilder("C:\\Studies", StudyBuilder.StudyType.local);
-			
+			//StudyBuilder sb = new StudyBuilder("C:\\Studies", StudyBuilder.StudyType.local);
+			String root = "C:\\";
+			StudyBuilder.StudyType type = StudyBuilder.StudyType.local;
 			List<Study> studies;
 			
 			try {
-				studies = Arrays.asList(sb.getAvailableStudies());
+				studies = Arrays.asList(StudyBuilder.getAvailableStudies(root, type));
 				for (Study s : studies) {
 					for (String img : s.getImgAddresses()) {
 						System.out.println(img);
