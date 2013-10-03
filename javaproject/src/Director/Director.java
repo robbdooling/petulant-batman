@@ -38,11 +38,17 @@ public class Director {
 		study = availStudies.get(Index);
 	}
 	public static boolean isLeft(){
+		if(study == null){
+			return false;
+		}
 		int currentIndex = study.getIndex();
 		int step = StateHolder.images();
 		return ((currentIndex - step) < 0);
 	}
 	public static boolean isRight(){
+		if(study == null){
+			return false;
+		}
 		int currentIndex = study.getIndex();
 		int step = StateHolder.images();
 		int maxIndex = study.getImgAddresses().size();
