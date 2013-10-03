@@ -22,6 +22,8 @@ public interface Study {
 	 */
 	public String getName();
 	
+	public String getMyPath();
+	
 	public void saveState();
 	
 	public int getIndex();

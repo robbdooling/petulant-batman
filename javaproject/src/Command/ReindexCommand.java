@@ -4,8 +4,8 @@
 package Command;
 
 import Director.Director;
-import State.StateHolder;
-import Study.Study;
+import State.*;
+import Study.*;
 
 public abstract class ReindexCommand implements Command {
 

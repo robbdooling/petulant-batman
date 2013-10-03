@@ -6,7 +6,7 @@ public class OpenStudyCommand implements Command {
 
 	@Override
 	public void execute() {
-		String StudyPath = Director.newStudyLocation();
+		//String StudyPath = Director.newStudyLocation();
 		
 	}
 
