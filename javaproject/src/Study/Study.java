@@ -2,6 +2,14 @@ package Study;
 
 import java.util.List;
 
+/**
+ * Defines the methods common to local and remote Study objects.
+ * A study is mean to hold a collection of addresses to allow
+ * a UI to load images. Also provides a way to save its settings
+ * to a .sav file.
+ * @author msd7734
+ *
+ */
 public interface Study {
 	/**
 	 * Get a collection of Strings representing absolute pathnames to .jpg
@@ -22,15 +30,29 @@ public interface Study {
 	 */
 	public String getName();
 	
+	/**
+	 * Return the location of this Study
+	 * @return A String address 
+	 */
 	public String getMyPath();
 	
-	//Unclear if Study should be handling its current index or not...
-	//So for now, we have two possiblities
-	//I'm so, so sorry
+	/**
+	 * Save this Study's information on current image address and
+	 * the display state of the application.
+	 */
 	public void saveState();
 	public void saveState(int index);
 	
+	/**
+	 * Get the index of the current image to display
+	 * @return An integer index
+	 */
 	public int getIndex();
+	
+	/**
+	 * Set the index of the current image to display
+	 * @param newIndex The new index
+	 */
 	public void setIndex(int newIndex);
 
 }

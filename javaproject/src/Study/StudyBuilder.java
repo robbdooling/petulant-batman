@@ -32,6 +32,14 @@ public class StudyBuilder {
 	
 	private StudyBuilder() { }
 	
+	/**
+	 * Find all the studies at a given address.
+	 * @param rootDir Some String for accessing a directory or remote address.
+	 * @param studyType Determines the kind of study, local or remote, that is returned
+	 * @return An array of Study objects
+	 * @throws NoValidStudiesFoundException If no valid Study objects can be built
+	 * at the given address
+	 */
 	public static Study[] getAvailableStudies(String rootDir, StudyType studyType)
 		throws NoValidStudiesFoundException {
 		
@@ -54,6 +62,11 @@ public class StudyBuilder {
 		}
 	}
 	
+	/**
+	 * Given an address, read the state of a Study from a .sav file
+	 * @param studyDir An address where a 0.sav can be found and read
+	 * @return The UI State read
+	 */
 	public static State readState(String studyDir) {
 		
 		File f = new File(studyDir + File.separator + "0.sav");
