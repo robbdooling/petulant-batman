@@ -74,17 +74,14 @@ public class StudyBuilder {
 					}
 				);
 				
-				//TODO
-				//if no .jpg files found in dir, should we skip or make an empty study?
-				//good practice would probably be to show empty, but disallow access
-				//might make things easier to just skip it, though.
-				//Also, a settings file may mark a study in the future, .jpg regex is
-				//only temporary
-				// - Matt
+				//TODO: Get studyStart through reading savefile
+				int studyStart = 0;
+				
 				if (jpgs.length > 0) {
 					studies.add(new FileStudy(
 						Arrays.asList( getAbsolutePaths(studyDir, jpgs) ),
-						studyDir.getName()
+						studyDir.getName(),
+						0
 					));
 				}
 				
