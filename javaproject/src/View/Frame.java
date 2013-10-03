@@ -195,11 +195,10 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//open();
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-					open(fc.getSelectedFile().getAbsolutePath());
+					Director.setRoot(fc.getSelectedFile().getAbsolutePath());
 				} 
 				availableStudies();
 				singleTileMode();
-				fillScreen(viewed);
 			}
 			
 		});
