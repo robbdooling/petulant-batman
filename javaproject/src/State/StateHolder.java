@@ -24,4 +24,8 @@ public class StateHolder {
 	public static void empty(){
 		currentState = new ZeroState();
 	}
+	
+	public static State getCurrentState() {
+		return currentState;
+	}
 }

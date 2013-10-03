@@ -66,6 +66,9 @@ public class StudyBuilder {
 					else if (pair[1].equals("four")) {
 						return new FourState();
 					}
+					else if(pair[1].equals("zero")) {
+						return new ZeroState();
+					}
 					else {
 						System.err.println("Invalid state read.");
 						return null;
