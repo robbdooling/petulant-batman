@@ -140,7 +140,6 @@ public class Frame extends JFrame {
 					singleTileMode();
 				}
 				images = Director.getImages();
-				System.out.println(images.size());
 				fillScreen(images);
 				test.dispose();
 				
