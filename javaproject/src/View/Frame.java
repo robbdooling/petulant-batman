@@ -1,5 +1,10 @@
 package View;
 
+import Command.ChangeStateCommand;
+import Command.LeftCommand;
+import Command.RightCommand;
+import Command.SaveStudyCommand;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -50,6 +55,12 @@ public class Frame extends JFrame {
 	private ArrayList<String> viewed;
 	private ArrayList<String> upcoming;
 	private final JFileChooser fc = new JFileChooser();
+	
+	private LeftCommand left;
+	private RightCommand right;
+	private ChangeStateCommand changeState;
+	private SaveStudyCommand saveStudy;
+	
 	
 	public Frame()
 	{
@@ -140,6 +151,7 @@ public class Frame extends JFrame {
 		JMenuItem close = new JMenuItem("Close Study");
 		JMenuItem exit = new JMenuItem("Exit");
 		
+		saveAs.setEnabled(false);
 		
 		//create view menu items
 		fourTile = new JMenuItem("Four Tile Mode");
