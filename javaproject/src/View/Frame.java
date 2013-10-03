@@ -7,7 +7,6 @@ import Command.SaveStudyCommand;
 import Director.Director;
 import State.StateHolder;
 import Study.NoValidStudiesFoundException;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -51,12 +50,11 @@ public class Frame extends JFrame {
 	private int curMode;
 	private List<String> images;
 	private final JFileChooser fc = new JFileChooser();
-	
 	private LeftCommand left;
 	private RightCommand right;
 	private ChangeStateCommand changeState;
 	private SaveStudyCommand saveStudy;
-	private JList<Object> listOfStudies = null;
+	private JList<Object> listOfStudies;
 	
 	public Frame()
 	{
@@ -99,8 +97,6 @@ public class Frame extends JFrame {
 		try {
 			listOfStudies = new JList<Object>(Director.getAvailStudies().toArray());
 		} catch (NoValidStudiesFoundException e1) {
-			// TODO Auto-generated catch block
-			//e1.printStackTrace();
 			System.err.println("No Available Studies");
 			JFrame errorFrame = new JFrame();
 			JOptionPane.showMessageDialog(errorFrame, "No Available Studies, please select a different directory");
