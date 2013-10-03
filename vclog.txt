@@ -1,0 +1,1255 @@
+commit f253e88486f3716d0f5b9fa09e580a944bb62726
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 07:38:30 2013 +0000
+
+    Added jar file
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c9c56fae85cebea8dc1572381cb5198eca5e21fa
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 07:32:51 2013 -0400
+
+    Implemented save prompt
+
+ 1 file changed, 81 insertions(+), 3 deletions(-)
+
+commit 02a32234660549380047423d6d42649d68d74158
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:56:44 2013 -0400
+
+    Fixed code, removed unused code.
+
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+commit 3eec90ab2c6bc72d096708441506367301bbb959
+Merge: 558e93f bec3abe
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:55:08 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 558e93fc4bd197c64f16a2f96870e7b7a8e7086f
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:54:55 2013 -0400
+
+    removed print statements
+
+ 1 file changed, 1 deletion(-)
+
+commit 84e43073548d3155143001885d54a854938c8f4c
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:53:43 2013 -0400
+
+    Removed more unused code
+
+ 1 file changed, 6 deletions(-)
+
+commit bec3abe4b43c50221a254197a94affab7d608fa1
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 06:52:19 2013 -0400
+
+    Added files to root
+
+ 10 files changed, 8 insertions(+)
+
+commit 55401cee0168c6a7a56ee6445964bb318c561f1e
+Merge: f79bcf3 230f46b
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:51:51 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit f79bcf3e2ede8b0c1a2c6a76034635b00b646f42
+Merge: 4333834 c823e42
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:12:21 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 43338347afd08dfa56539bf3ba62533b6bfc87d6
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:11:52 2013 -0400
+
+    Removed unused code
+
+ 1 file changed, 5 insertions(+), 10 deletions(-)
+
+commit 7f9cf06a18f8a4622748fd7ba1a67a2ebb917678
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:09:07 2013 -0400
+
+    Removed unused import.
+
+ 1 file changed, 1 deletion(-)
+
+commit b256ae810385b272b03e44f00ce6eb88d5c03156
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:08:39 2013 -0400
+
+    Removed unused code.
+
+ 1 file changed, 3 insertions(+), 170 deletions(-)
+
+commit fa0cb1bc71c708d4683e32d11150acde997b2ae6
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 06:06:25 2013 -0400
+
+    Removed a word.
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d0ed567727441bf8c39b2a7b3e5be372ef9ab7d7
+Merge: fed8ec6 77561a4
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 05:58:36 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 77561a47f2d5a91f16ed166ca99557136af99daf
+Merge: da97d78 b1dba6e
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 05:57:58 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit da97d78bd8b2de65ce49a3288c61c113d868b970
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 05:57:37 2013 -0400
+
+    Director can now initialize state from save
+
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit fed8ec65b4a8d19c3a2b080953977ecdc527232e
+Merge: a698cef b1dba6e
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 05:54:13 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit b1dba6e3bae13d083aa97f633c48686093494114
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 05:53:17 2013 -0400
+
+    Changed to jpg
+
+ 20 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a698cef7e5fd1bc65397cfce4e755d48393d9f33
+Merge: d1aeafd 944ba7d
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 05:46:47 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit e4f1016164ee3f0af78479288519a8142ed6beb6
+Merge: aa36477 4abd6d1
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 05:46:21 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 944ba7d8e504b02b427059bf99c47617fe133d6f
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 05:44:09 2013 -0400
+
+    Added test study, added changes to design doc
+
+ 11 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d1aeafd88ee6a068484594fe4e437dbca3505ccf
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 05:32:14 2013 -0400
+
+    Updated spelling in GUI as well as spacing.
+
+ 1 file changed, 11 insertions(+), 26 deletions(-)
+
+commit aa364778b9b24c24eacc366c783291e9f568dc51
+Merge: eb65406 43fbec3
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 05:02:40 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit eb65406bb91bb45558ba43f8b1ee865a7398062f
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 05:02:15 2013 -0400
+
+    Tweaked StudyBuilder error printing behavior
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08e652de20c24dac1cd546ee63afd94e9ec8ec70
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 04:46:29 2013 -0400
+
+    Added temp debug statements to Study.saveState
+
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+commit 36e6a34ca7a32dd5d24e8b42492224f829d7fc95
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 04:30:05 2013 -0400
+
+    The GUI works!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ 1 file changed, 31 insertions(+), 4 deletions(-)
+
+commit 54e083161ec8536c8ca7f32a4812476189ba52d7
+Merge: 4770557 9bab331
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 04:19:42 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 4770557681adccbbb18e746de380167f923614a5
+Merge: e5c0796 2fd4bcb
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 04:09:36 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit e5c079653a680d212d5c7b934d45a74bd1269044
+Merge: afa5f91 d673a47
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 04:04:14 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit afa5f9126a8053b8ec32a6cc9fe55cac910a53de
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 04:03:23 2013 -0400
+
+    Fixed errors and removed unused code.
+
+ 1 file changed, 92 insertions(+), 86 deletions(-)
+
+commit d673a47a46b0d2f26ddd2ce9134a19bbdc451276
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 03:54:39 2013 -0400
+
+    State Javadocs
+
+ 5 files changed, 47 insertions(+)
+
+commit d1ab54543252af327c02ffead250e9ebeae6781c
+Merge: b98abb6 dfdc9fe
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 03:42:06 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit b98abb66c98e757ea7b40ce3f9f2080e3dc86b13
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 03:41:50 2013 -0400
+
+    I think it might work now.
+
+ 1 file changed, 24 insertions(+), 6 deletions(-)
+
+commit dfdc9feaa4c722b7d1599aa56ff93ad01a0e0e7d
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 03:40:51 2013 -0400
+
+    Added Docstrings
+
+ 4 files changed, 50 insertions(+), 4 deletions(-)
+
+commit 2069111ad6c1e23d51904002681ca841669e9640
+Merge: d05d27e 5d31bef
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 03:14:07 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit d05d27ed94639da251ae457b1d57facb5557552d
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 03:13:58 2013 -0400
+
+    Fixed open study
+
+ 1 file changed, 30 insertions(+), 5 deletions(-)
+
+commit 5d31bef1b593d83be2298f47a508d6f947b56ed6
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 03:12:39 2013 -0400
+
+    Bug fixes to StudyBuilder
+
+ 1 file changed, 11 insertions(+), 6 deletions(-)
+
+commit 230f46bdecd9cf046381181a715837ad1101728e
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 06:16:55 2013 +0000
+
+    Moving around should actually work now
+
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit c823e42202f8460cf0e8ae0d781f9396c6f7b1e1
+Merge: bf53723 fa0cb1b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 06:06:48 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit bf537238e25f4d42a373af858c1a0a76829aa99c
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 06:05:46 2013 +0000
+
+    Ok I'm sureish indexing more or less works now, I think
+
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 4abd6d1befbe2c9a18982c17efe4ee61f9c84503
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 05:30:49 2013 +0000
+
+    Changing index for isRight and isLeft
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 257ee98496910312d824b8bc76d9a2769d6abb76
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 05:19:37 2013 +0000
+
+    Changed isLeft or isRight to only care if one thing is to the left or right
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e1af93278eccda1bc5cb3d1db4d58a5b1b65b141
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 05:17:21 2013 +0000
+
+    changed reindex command to deal with problems reindexing in 4 image mode
+
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 43fbec3ca14091c29de5ce4b464a1afac055556b
+Merge: d1d1eea cbc3a2d
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 05:01:55 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit cbc3a2d7e0563521c02a52c564c50cd699f9522e
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 04:49:34 2013 -0400
+
+    Updated Design Document
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d1d1eea13e9fa350823afe01c4bc2ccd93182987
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 05:01:00 2013 +0000
+
+    Changed getImages to handle things like 3 images to the right
+
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+commit 9bab331bc7a14eeac2a931eac021fced16fd10df
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 04:18:29 2013 +0000
+
+    indexed the isRight correctly so it works hopefully
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2fd4bcb9c6d53d618c3e04a9e432d16f556147cc
+Merge: d72dc54 92e1eb5
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 04:08:05 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 92e1eb5c0d771f23e51f92d60936a4839e9fa0b0
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 04:07:33 2013 -0400
+
+    Added Multiplicity
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d72dc5422ab6893069570ad868d7d1206c35c993
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 04:06:53 2013 +0000
+
+    The logic for isLeft and isRight was backwards, not anymore
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bf28d38250e8fe044141098c586b701d22993035
+Merge: 238ae33 dfdc9fe
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:53:39 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 238ae334d2b9e0d073ea92171572d369e6e97628
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:52:57 2013 +0000
+
+    Added command javadocs and took out the -1 because as it turns out, I'm an idiot and I didn't need it
+
+ 6 files changed, 26 insertions(+), 6 deletions(-)
+
+commit 903c04c52e5452ecff390cfadcf69386c2cf8538
+Merge: aa1d4a7 05ac2f8
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:39:09 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 05ac2f87a58d32525d83933625535efca4297b7f
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 03:38:47 2013 -0400
+
+    Updated Design document
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit aa1d4a7310243a2a5d577310ffa4d6f0b687b47e
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:37:20 2013 +0000
+
+    Fixed a bug where the state doesn't change to one state
+
+ 1 file changed, 2 insertions(+)
+
+commit 27acdd8fb5078d82bc76d511d953d47327bd3086
+Merge: 7e63cae 32e95fd
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:36:23 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 32e95fd4d9af68613ee2790529ef428cb45bf748
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 03:27:46 2013 -0400
+
+    Finished CRC cards, Updated UML diagrams
+
+ 19 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7e63caed6fb07ac9fd2f166cf4c516665402c7db
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:35:39 2013 +0000
+
+    Added javadocs to director
+
+ 1 file changed, 38 insertions(+), 1 deletion(-)
+
+commit c22117bbfdd4acc159eae17633fb2575e7bc15de
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 03:07:15 2013 +0000
+
+    Revert "Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git"
+    
+    This reverts commit 41b44b5d1c1c2461961d48eca94c3a1228a3e9a3.
+
+ 4 files changed, 16 insertions(+), 14 deletions(-)
+
+commit 41b44b5d1c1c2461961d48eca94c3a1228a3e9a3
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 02:55:17 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+ 4 files changed, 14 insertions(+), 16 deletions(-)
+
+commit 12ec2aa67cfcca6621a1f1f58e8711badb5a5c52
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 02:12:33 2013 -0400
+
+    Not sure what I changed
+
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit fa381648a391331da0d34e3709121720fc9f058e
+Merge: ef91220 4ddab99
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:43:13 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit ef91220f31ec9caf5ba202533e1ff47d7886e664
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:38:35 2013 -0400
+
+    added openStudy to file menu
+
+ 1 file changed, 2 insertions(+)
+
+commit 390989b6ae14f559742d3f9e4ee74d02109f5336
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:34:55 2013 -0400
+
+    Fixed Errors
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f8d8111dc018ca6fb399b89c5714d9544b8e8a9f
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:34:21 2013 -0400
+
+    changed menu bar and uses isLeft/isRight
+
+ 1 file changed, 41 insertions(+), 33 deletions(-)
+
+commit e9549d48bf27055cfe2f17622c4a73ae6f856f10
+Merge: e88336c 92bc423
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:33:42 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit e88336c1b622d6007d100c4f7b82706f28697e65
+Merge: 36579d6 dba980f
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:14:56 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 36579d63c0ebc0721ad113aeeb4fa6e6310f9c48
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 01:08:58 2013 -0400
+
+    Added commands
+
+ 1 file changed, 12 insertions(+)
+
+commit d8241d5b17a85cd53f2c92e45c244d7f79130441
+Merge: 807f4df 6afe081
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 00:28:42 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 6afe081e9e9b39056d3127de7c1214aa795bba88
+Merge: b57f3fc ee1538c
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 00:28:19 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit b57f3fcc6eef50785c3ffa69a44bd7b6253dadfd
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 00:27:43 2013 -0400
+
+    Added support so a Study knows its absolute directory
+
+ 4 files changed, 18 insertions(+), 1 deletion(-)
+
+commit 807f4df3cdf5164330d4a2c6a2489a97d6538096
+Author: phillip092 <calfinz@gmail.com>
+Date:   Thu Oct 3 00:11:26 2013 -0400
+
+    Added info frame
+
+ 1 file changed, 61 insertions(+), 1 deletion(-)
+
+commit eb58cf844ebc06df627992a5cb5a4133caefd184
+Merge: 5207166 da13c55
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 23:59:29 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 520716651d893b56e8b2dd501a18eee3783059aa
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 23:57:10 2013 -0400
+
+    Added method so StudyBuilder can read StudyState
+
+ 3 files changed, 39 insertions(+), 5 deletions(-)
+
+commit ab066c334ad6460ecd4021ef8a54d0f06082d1a0
+Merge: c6f603f da13c55
+Author: phillip092 <calfinz@gmail.com>
+Date:   Wed Oct 2 23:37:06 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+
+commit c6f603fa34ba179b412688f08f427e7f3d672854
+Author: phillip092 <calfinz@gmail.com>
+Date:   Wed Oct 2 23:36:29 2013 -0400
+
+    added available studies selection
+
+ 1 file changed, 38 insertions(+), 7 deletions(-)
+
+commit 4ddab99ba0482715b1f17744f5078735aa34cdc9
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 01:38:15 2013 +0000
+
+    Readded that -1 in there
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 449b2f974bba47e74d93f85a90622c2792080384
+Merge: 0efe620 557107b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 01:37:36 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 557107bbac65725fe29977b71c308ee1736f4337
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 01:36:40 2013 -0400
+
+    Updated Master UML
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3b62ff7fa51a387080b460b757cfdc2ee55cd31b
+Merge: e6970fc 390989b
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 01:36:03 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit e6970fcd59fbf0c5628bed2f56baebccc7493c92
+Merge: f8776d9 f8d8111
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 01:35:04 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit f8776d98b10a5e48f702dfd9fd63c36fb5699d6c
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 01:34:38 2013 -0400
+
+    Removed accessor from StateHolder, changed way of accessing
+
+ 2 files changed, 5 insertions(+), 9 deletions(-)
+
+commit 0efe620ae63f8b8ebf41c6ff3e34454923c8e0da
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 01:36:40 2013 +0000
+
+    Added checking for no loaded study in isLeft isRight
+
+ 1 file changed, 6 insertions(+)
+
+commit 92bc423ddfd111c10df91968be8897d137fdf670
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 01:29:08 2013 +0000
+
+    Implemented isRight
+
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit dba980fac092cb3f935af69ee3cf88e095542cee
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 01:07:36 2013 +0000
+
+    getleft implemented
+
+ 1 file changed, 6 insertions(+)
+
+commit fb89058b57b8197e055de33628b08fbcfc37081e
+Merge: 033a72e 72c05bc
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 00:52:19 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit 033a72ef9d31e97459cd80c8a26c3a3ad5a945e3
+Author: msd7734 <msd7734@rit.edu>
+Date:   Thu Oct 3 00:51:52 2013 -0400
+
+    Added methods to allow a Study to store its settings
+
+ 5 files changed, 83 insertions(+), 2 deletions(-)
+
+commit 72c05bc532afbc1b05bdb3ba051083726db4e905
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 00:49:16 2013 -0400
+
+    Updated Master UML Diagram
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 47735334f5b8d9affe5f6f432b88bd3ee302d7dc
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 00:30:01 2013 +0000
+
+    OpenStudyCommand is implemented a different way now
+
+ 1 file changed, 13 deletions(-)
+
+commit ee1538c9ef5e57d2429a72baba53538e5f6d288a
+Merge: 438f866 559dbcb
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 00:24:23 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 559dbcbe6d261acdec93aec75c4caebe4a210d39
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Thu Oct 3 00:17:29 2013 -0400
+
+    Updates Master UML
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 438f86646213da855a6c8da4649d537262ca79b3
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 00:22:24 2013 +0000
+
+    Commented out OpenStudyCommand and more work on Director
+
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 9053e907259713392a61badcdeb7d6e76876ad1e
+Merge: 7573fa5 eb58cf8
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 00:09:18 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+    
+    Conflicts:
+    	javaproject/src/Director/Director.java
+
+commit 7573fa594eaba05b57481f8fd680331885fe9c19
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Oct 3 00:00:08 2013 +0000
+
+    Working on making functions so the gui can actually select a study
+
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+commit da13c55f61059038c8ced72bd52f5622e17fb129
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 23:35:15 2013 +0000
+
+    Fixed some stuff
+
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+commit 34a8ec2b1b5edca141cac16ba615b3557024ea3c
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 23:19:15 2013 +0000
+
+    Implemented SaveStudyCommand
+    
+    Sorry about that. Git died on us a little.
+
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit ebfb994de1d8b402ed6eb08d07ef590def7c8a49
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 22:55:11 2013 +0000
+
+    DAMN YOU CLASS FILES
+    
+    DAMN YOU ALL TO HELL
+
+ 13 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 467dbabd3b4e241d6c19b26d6cf33b0599bcd4d0
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Wed Oct 2 22:53:19 2013 -0400
+
+    added crc cards
+
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 17bde854a16b72c96d2237968fc2d896bc533625
+Merge: 4c14ffe 8623ed0
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Wed Oct 2 22:52:14 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+    
+    Conflicts:
+    	javaproject/bin/Study/StudyBuilder.class
+
+commit 4c14ffef8c23a6b880c29fdda9372fe0e58ae357
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Wed Oct 2 22:51:05 2013 -0400
+
+    Did absolutly nothing
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8623ed031180f2d3a98fb93a95c27a918d3d5c8d
+Merge: b10bd2e 0533ea0
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 22:44:51 2013 -0400
+
+    Merge branch 'refs/heads/master' of https://github.com/Ourobor/petulant-batman.git
+
+commit b10bd2e781eaac535043471ecfec6775f2ee707a
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 22:42:32 2013 -0400
+
+    ?????
+
+ 1 file changed, 14 insertions(+)
+
+commit 0533ea05161e131cb149d474fb8b429266abca50
+Author: phillip092 <calfinz@gmail.com>
+Date:   Wed Oct 2 22:42:26 2013 -0400
+
+    First GUI commit
+
+ 1 file changed, 564 insertions(+), 61 deletions(-)
+
+commit 65cfcc2c057256d5ee4fe0b499cc5d83b64ce421
+Merge: 3672571 296db15
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 22:40:10 2013 -0400
+
+    Merge branch 'refs/heads/master' of
+    https://github.com/Ourobor/petulant-batman.git
+
+commit e4efe1852e417c5d556ff40c3678d8ff9a2cf653
+Merge: 63dff64 f14334f
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Wed Oct 2 22:28:43 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+    
+    Conflicts:
+    	javaproject/bin/View/Frame.class
+    	javaproject/bin/View/ViewTester.class
+
+commit 63dff6486931cfe9b81b345136e829c2797b4a8b
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Wed Oct 2 22:27:05 2013 -0400
+
+    Made a useless GUI
+
+ 5 files changed, 148 insertions(+), 6 deletions(-)
+
+commit 36725710ddb863ea078b6aae4f760afcbb682991
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 22:22:00 2013 -0400
+
+    StudyBuilder can read a '0.sav' file, stubbed Study saveState()
+
+ 8 files changed, 48 insertions(+), 3 deletions(-)
+
+commit f14334fe4c77fbb6dadd23ca6d2c5b70db10a172
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 22:26:25 2013 +0000
+
+    Finished with the CRC cards
+
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 296db1538aed2227121600b48aa984bf00afa8ad
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 22:02:30 2013 +0000
+
+    I did a lot of things that I don't remember because I got hotchocolate at midnight oil and I didn't commit before I left
+
+ 20 files changed, 15 insertions(+), 1 deletion(-)
+
+commit c1c4955bf9b62b5ab131e31734e5105a3852c54c
+Merge: bb9b1f7 32b368c
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 20:56:47 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 32b368c378b69128da0a8507744439d3a4c23de9
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 20:56:13 2013 -0400
+
+    Implemented
+
+ 16 files changed, 43 insertions(+), 25 deletions(-)
+
+commit 13db31bba274a833184404ded58ec2ab885d344f
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 20:33:02 2013 -0400
+
+    Factory-ized StudyBuilder and updated the test file
+
+ 4 files changed, 16 insertions(+), 39 deletions(-)
+
+commit aff1af3f189495b80dbea4e91e5c8bb01d404530
+Merge: 616cb9a 9c1ae26
+Author: unknown <msd7734@MOWETT.se.rit.edu>
+Date:   Wed Oct 2 20:23:31 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 616cb9ab1be6d33bdf06b17907ff1c0afc415cca
+Author: msd7734 <msd7734@rit.edu>
+Date:   Wed Oct 2 20:11:12 2013 -0400
+
+    Put exception into its own class
+
+ 3 files changed, 11 insertions(+), 8 deletions(-)
+
+commit bb9b1f7a6f243b47b37bcac8d9cea6441451ae23
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 20:29:28 2013 +0000
+
+    Got rid of useless Arraylist import
+
+ 1 file changed, 1 deletion(-)
+
+commit 9c1ae263ac49b8f099b384ba4decd35188884335
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 20:14:45 2013 +0000
+
+    Implemented getImages
+
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit bffd159c9f3b675245bd6bd65248c48c339cac94
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 20:06:31 2013 +0000
+
+    Stubbed function that will return the x needed image locations
+
+ 2 files changed, 7 insertions(+)
+
+commit 11c88b2126a11736e9f8ccc5324508c56908622b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:42:03 2013 +0000
+
+    CRC cards for LeftCommand and RightCommand
+
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 879839ee0da9d38f6a7170e15cf8742d407608c6
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:32:02 2013 +0000
+
+    Wrote cards for the rest of the state system
+
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 42d460a9a6d2be0eb3b7a8b823f1d257a46a3dfa
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:27:42 2013 +0000
+
+    Moved finished CRC cards into their own folder so it's easy to tell what needs to be done
+
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7d1baf973a2246a40f1d34ea74e7cef4ba42258a
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:26:12 2013 +0000
+
+    Wrote CRC cards for the remaining states
+
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 79ba26383be0429322c3606924ad3d1152f6ab74
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:22:51 2013 +0000
+
+    Wrote CRC card for Zero State
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 78e2d049243773179f83f1d0df96fab6a7a8bfed
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 19:18:01 2013 +0000
+
+    Moved commands around, implemented director, implemented changestatecommand
+
+ 8 files changed, 30 insertions(+), 22 deletions(-)
+
+commit aedc203ee026b8b4b199b3aed2b7e5a79bb004fa
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Wed Oct 2 11:47:58 2013 +0000
+
+    Added unit testing for state and debugged state
+
+ 6 files changed, 53 insertions(+), 23 deletions(-)
+
+commit 3f09ef43a97005949068e0f087f73836deac4af5
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 13:10:21 2013 +0000
+
+    SOEMTHING HAPPEND
+
+ 4 files changed, 10 insertions(+), 4 deletions(-)
+
+commit 3b14ffdefc220268a7758d2fe28528fa7d9da40b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 12:45:21 2013 +0000
+
+    Removed unneeded ArrayList import
+
+ 2 files changed, 2 deletions(-)
+
+commit 83f7828031dc9ef7589a7e7a6b1b7d12f798e079
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 12:42:58 2013 +0000
+
+    Implemented State
+
+ 10 files changed, 29 insertions(+), 11 deletions(-)
+
+commit 999cfb8f191911eb69509c349f8819e5bfb9d821
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 12:05:04 2013 +0000
+
+    Added State subsystem
+
+ 10 files changed, 43 insertions(+)
+
+commit f84bfe974ce783def49d4627f5a1c4645f0a51b7
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:49:54 2013 +0000
+
+    Began implementing reindexcommand
+
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit ae5a969b6361e3f21ae8ba56e1be71a7ed3774b1
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:43:13 2013 +0000
+
+    Added basic director functionality stuff
+
+ 2 files changed, 16 insertions(+)
+
+commit 9450827bd6113379fe5bd91fb776f4da2c1564ad
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:31:18 2013 +0000
+
+    Added directionality to ReindexCommand
+
+ 4 files changed, 7 insertions(+), 9 deletions(-)
+
+commit 1394bec59eeaa00aa9526db6b4f06bcc73e66a86
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:19:02 2013 +0000
+
+    Added LeftCommand and RightCommand
+    
+    Reindex command is now an abstract class and right and left commands extend the functionality because both commands will run more or less the same stuff, one left, one right.
+
+ 5 files changed, 23 insertions(+), 1 deletion(-)
+
+commit 63173463efab44c26a8a1e5cdeb19ceddccb0437
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:13:22 2013 +0000
+
+    Removed commandBuilder
+    
+    Command Builder has no real functionality and only complicates the design
+
+ 1 file changed, 12 deletions(-)
+
+commit d0da6ef89e6639f022b61712a5b9f737f8db6c20
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:12:12 2013 +0000
+
+    Added my name to that comment because I'm an idiot >.>
+
+ 2 files changed, 1 insertion(+)
+
+commit 1fe387b8d4810cafec7589396c8fba904aff1939
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Tue Oct 1 11:10:02 2013 +0000
+
+    Commented on implementation of findLocalStudies
+
+ 2 files changed, 2 insertions(+)
+
+commit ae18ee2b7e9bb173049e2f1817d311b94623a2ea
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 05:28:57 2013 -0400
+
+    Added Sequence Diagrams
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9dff9434c5337fdb79790d645bd1577ecdd76c42
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 05:06:25 2013 -0400
+
+    Added Blank CRC Cards
+
+ 20 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 58a80a5b323809e1d9121eb51c93db07a90d344d
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 04:58:05 2013 -0400
+
+    Added Presentation to Documentation
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b1a1ceaab85e8a9b6bdf3d22ff981983c654b869
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 04:55:19 2013 -0400
+
+    Added Documentation
+
+ 17 files changed, 96 insertions(+), 96 deletions(-)
+
+commit 33755966aba308c4d866efd88671d8ca893c2656
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 04:52:09 2013 -0400
+
+    Revert "Updated frame class"
+    
+    This reverts commit 18113fcddb588af017a9d4b83faacc10fe356c72.
+
+ 2 files changed, 6 insertions(+), 23 deletions(-)
+
+commit 18113fcddb588af017a9d4b83faacc10fe356c72
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Tue Oct 1 02:01:57 2013 -0400
+
+    Updated frame class
+
+ 2 files changed, 23 insertions(+), 6 deletions(-)
+
+commit 75b37b6743794feba35646d1aca7f981c81dfd9f
+Author: Matt Dennis <msd7734@rit.edu>
+Date:   Mon Sep 30 20:24:59 2013 -0400
+
+    Added support for name String to Study objects
+
+ 7 files changed, 22 insertions(+), 3 deletions(-)
+
+commit a5adbfd7afb8309d4174558447dd3ab8d63be4fa
+Author: phillip092 <calfinz@gmail.com>
+Date:   Mon Sep 30 19:39:00 2013 -0400
+
+    fixed typos
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7b7b0b0b70f98fdbdc5de57acb3561c9f9602a68
+Merge: 5532e37 1d6264a
+Author: Matt Dennis <msd7734@gmail.com>
+Date:   Mon Sep 30 02:41:17 2013 -0400
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman.git
+    
+    Conflicts:
+    	javaproject/bin/Study/FileStudy.class
+    	javaproject/bin/Study/Study.class
+    	javaproject/bin/Study/StudyBuilder.class
+    	javaproject/src/Study/FileStudy.java
+    	javaproject/src/Study/Study.java
+    	javaproject/src/Study/StudyBuilder.java
+
+commit 5532e372a28207d2d891ddf55f185d15ca183de4
+Author: Matt Dennis <msd7734@gmail.com>
+Date:   Mon Sep 30 02:25:44 2013 -0400
+
+    StudyBuilder should be (mostly) fully realized.
+    Basic functionality to the Study classes.
+    Added Testing package for people to throw random test classes in.
+
+ 8 files changed, 209 insertions(+), 1 deletion(-)
+
+commit 1d6264a732172ecf7a72e3fe84043a2715915a84
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Mon Sep 30 01:02:05 2013 +0000
+
+    Added example files
+
+ 513 files changed, 3 insertions(+)
+
+commit f3aa8acc72ea38c74084bc05ebc783f97f4359c2
+Merge: 29105e9 4cd3492
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Mon Sep 30 00:10:27 2013 +0000
+
+    Merge branch 'master' of https://github.com/Ourobor/petulant-batman
+
+commit 29105e9361687478982712c3d3787a4a0303d232
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Mon Sep 30 00:00:13 2013 +0000
+
+    Added some methods to Study builder
+
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 4cd34929541a6f927d0a01574f5c7897b2a25d40
+Author: BubbleNet <raquasa123@gmail.com>
+Date:   Sun Sep 29 19:06:04 2013 -0400
+
+    Added View package which contains UI classes
+
+ 4 files changed, 43 insertions(+)
+
+commit f1e6bbacce27b8ea78673a858c6b12c3f50f77b7
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Sat Sep 28 18:46:32 2013 +0000
+
+    Added CommandBuilder class to project
+
+ 2 files changed, 12 insertions(+)
+
+commit 4a3bd4c36bdc8f72b523d39fbf9af45acfb251b6
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Sat Sep 28 18:38:10 2013 +0000
+
+    Updated the Study interface to include basic functionality
+
+ 4 files changed, 21 insertions(+), 1 deletion(-)
+
+commit d3ea097cf845142d8f2a01a3ed29ce85064ef630
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Sat Sep 28 18:25:59 2013 +0000
+
+    Stubbed out the rest of the backend classes
+
+ 22 files changed, 56 insertions(+), 41 deletions(-)
+
+commit 85acfb822659aa2d496ab3b4caac3a51d1992ad9
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Sat Sep 28 18:15:44 2013 +0000
+
+    Stubbed out the command subsystem
+
+ 10 files changed, 64 insertions(+)
+
+commit f883ab5e522ee962d9cd105d1add7c7a5af78b38
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Sep 26 12:30:33 2013 +0000
+
+    Updated the StudySubsystem to include the Study Builder
+
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 82145fff2dd02db03c74ba4c2c08b567aa3c8944
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Sep 26 12:07:00 2013 +0000
+
+    Added a description of the Study Subsystem
+
+ 1 file changed, 21 insertions(+)
+
+commit 14d8aef59935eb0801fedd6e53bd6e98e92e748b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Sep 26 11:33:55 2013 +0000
+
+    Defined the subsystem for CMDBuilder
+
+ 1 file changed, 30 insertions(+)
+
+commit 80ab0ff4194dc2aa53b026454a5e25666e26fe56
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Sep 26 11:07:07 2013 +0000
+
+    Added the SubsystemDiagram
+
+ 1 file changed, 45 insertions(+)
+
+commit 78b7afcd38b7c0d9b4f15275c3d2ef26e01c4c1b
+Author: Robert Lowe <rob@lowefrequency.com>
+Date:   Thu Sep 26 07:20:55 2013 -0700
+
+    Initial commit
+
+ 2 files changed, 2 insertions(+)
