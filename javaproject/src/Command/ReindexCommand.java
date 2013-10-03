@@ -11,7 +11,7 @@ public abstract class ReindexCommand implements Command {
 
 	@Override
 	public void execute() {
-		Study currentStudy = Director.D().getStudy();
+		Study currentStudy = Director.getStudy();
 		int currentIndex = currentStudy.getIndex();
 		int newIndex = currentIndex + (StateHolder.images() * direction());
 		currentStudy.setIndex(newIndex);

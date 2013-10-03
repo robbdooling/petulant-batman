@@ -10,9 +10,19 @@ public interface Study {
 	 */
 	public List<String> getImgAddresses();
 	
+	/**
+	 * Get the absolute path for the current image(s) being looked at
+	 * @return
+	 */
+	public String[] getCurImgAddress();
+	
+	/**
+	 * Get the name of this study (usually the directory name)
+	 * @return Name String
+	 */
 	public String getName();
 	
 	public int getIndex();
 	public void setIndex(int newIndex);
-	public String getLocation();
+
 }

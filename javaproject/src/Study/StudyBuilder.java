@@ -26,24 +26,19 @@ public class StudyBuilder {
 	
 	public enum StudyType { remote, local; }
 	
-	private String rootDir;
-	private StudyType studyType;
 	
-	public StudyBuilder(String searchDir, StudyType src) {
-		rootDir = searchDir;
-		studyType = src;
-	}
+	private StudyBuilder() { }
 	
-
-	
-	public Study[] getAvailableStudies() throws NoValidStudiesFoundException {
-		if (this.studyType == StudyType.remote) {
+	public static Study[] getAvailableStudies(String rootDir, StudyType studyType)
+		throws NoValidStudiesFoundException {
+		
+		if (studyType == StudyType.remote) {
 			//dummy object to pay lip service to concept of remote study
 			return new RemoteStudy[]{};
 		}
 		
-		else if (this.studyType == StudyType.local) {
-			return findLocalStudies();
+		else if (studyType == StudyType.local) {
+			return findLocalStudies(rootDir, studyType);
 		}
 		
 		else { 
@@ -53,7 +48,9 @@ public class StudyBuilder {
 		}
 	}
 	
-	private FileStudy[] findLocalStudies() throws NoValidStudiesFoundException {
+	private static FileStudy[] findLocalStudies(String rootDir, StudyType studyType)
+	throws NoValidStudiesFoundException {
+		
 		//This should probably return paths, not FileStudys. If it's given to the UI
 		//we don't want the UI to be dealing with a Study object
 		//-Rob
@@ -77,17 +74,14 @@ public class StudyBuilder {
 					}
 				);
 				
-				//TODO
-				//if no .jpg files found in dir, should we skip or make an empty study?
-				//good practice would probably be to show empty, but disallow access
-				//might make things easier to just skip it, though.
-				//Also, a settings file may mark a study in the future, .jpg regex is
-				//only temporary
-				// - Matt
+				//TODO: Get studyStart through reading savefile
+				int studyStart = 0;
+				
 				if (jpgs.length > 0) {
 					studies.add(new FileStudy(
 						Arrays.asList( getAbsolutePaths(studyDir, jpgs) ),
-						studyDir.getName()
+						studyDir.getName(),
+						0
 					));
 				}
 				
@@ -96,7 +90,7 @@ public class StudyBuilder {
 		
 		//we have no studies, up to the caller to decide what to do
 		if (studies.size() == 0)
-			throw new NoValidStudiesFoundException();
+			throw new NoValidStudiesFoundException(rootDir);
 		
 		return studies.toArray(new FileStudy[]{});
 	}
@@ -109,7 +103,7 @@ public class StudyBuilder {
 	 * @return An array of path strings as a copy of paths, but with "absolute"
 	 * paths
 	 */
-	private String[] getAbsolutePaths(File dir, String[] paths) {
+	private static String[] getAbsolutePaths(File dir, String[] paths) {
 		String[] result = new String[paths.length];
 		
 		for (int i=0; i<paths.length; i++) {
@@ -118,31 +112,6 @@ public class StudyBuilder {
 		}
 		
 		return result;
-	}
+	}	
 	
-	///////////////////////
-	// Getters and Setters
-	///////////////////////
-	
-	public StudyType getStudyType() {
-		return studyType;
-	}
-	
-	public String getSearchDir() {
-		return rootDir;
-	}
-	
-	public void setStudyType(StudyType st) {
-		studyType = st;
-	}
-	
-	public void setSearchDir(String dir) {
-		rootDir = dir;
-	}
-	
-	public class NoValidStudiesFoundException extends Exception {
-		NoValidStudiesFoundException() {
-			super("No valid studies could be found in the given root directory.");
-		}
-	}
 }

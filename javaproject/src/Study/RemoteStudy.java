@@ -9,6 +9,11 @@ public class RemoteStudy implements Study {
 	public List<String> getImgAddresses() {
 		return null;
 	}
+	
+	@Override
+	public String[] getCurImgAddress() {
+		return null;
+	}
 
 	@Override
 	public int getIndex() {
@@ -20,12 +25,6 @@ public class RemoteStudy implements Study {
 	public void setIndex(int newIndex) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public String getLocation() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
