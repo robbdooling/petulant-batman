@@ -35,6 +35,9 @@ public class StudyBuilder {
 	public static Study[] getAvailableStudies(String rootDir, StudyType studyType)
 		throws NoValidStudiesFoundException {
 		
+		if (! new File(rootDir).exists())
+			throw new NoValidStudiesFoundException(rootDir);
+		
 		if (studyType == StudyType.remote) {
 			//dummy object to pay lip service to concept of remote study
 			return new RemoteStudy[]{};
@@ -100,7 +103,7 @@ public class StudyBuilder {
 			if (f.isDirectory()) {
 				
 				File studyDir = new File(f.getPath());
-					
+				
 				String[] jpgs = studyDir.list(
 					new FilenameFilter() {
 						@Override
@@ -113,10 +116,8 @@ public class StudyBuilder {
 				);
 				
 				
-				
-				//TODO: Get studyStart through reading savefile
 				File save = new File(studyDir.getPath() + File.separator + "0.sav");
-				int studyStart;
+				int studyStart = 0;
 				
 				//Format:
 				//name=val
@@ -137,12 +138,16 @@ public class StudyBuilder {
 					studyStart = 0;
 				}
 				
-				if (jpgs.length > 0) {
+				if (jpgs == null) {
+					//no jpgs found
+				}
+				
+				else if (jpgs.length > 0) {
 					studies.add(new FileStudy(
 						Arrays.asList( getAbsolutePaths(studyDir, jpgs) ),
 						studyDir.getName(),
 						studyDir.getAbsolutePath(),
-						0
+						studyStart
 					));
 				}
 			}
