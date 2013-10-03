@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.File;
 import java.io.FilenameFilter;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
 import java.util.regex.*;
 
 public class StudyBuilder {
@@ -74,8 +76,30 @@ public class StudyBuilder {
 					}
 				);
 				
+				
+				
 				//TODO: Get studyStart through reading savefile
-				int studyStart = 0;
+				File save = new File(studyDir.getPath() + File.separator + "0.sav");
+				int studyStart;
+				
+				//Format:
+				//name=val
+				try {
+					Scanner sc = new Scanner(save);
+					while (sc.hasNextLine()) {
+						String[] pair = sc.nextLine().split("=");
+						if (pair[0].equals("index")) {
+							studyStart = Integer.parseInt(pair[1]);
+						}
+					}
+					sc.close();
+				}
+				catch(FileNotFoundException fnfe) {
+					studyStart = 0;
+				}
+				catch(NumberFormatException nfe) {
+					studyStart = 0;
+				}
 				
 				if (jpgs.length > 0) {
 					studies.add(new FileStudy(
@@ -84,7 +108,6 @@ public class StudyBuilder {
 						0
 					));
 				}
-				
 			}
 		}
 		

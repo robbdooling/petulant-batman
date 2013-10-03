@@ -15,7 +15,7 @@ public class FileStudy implements Study {
 		this.name = name;
 		this.curIndex = startIndex;
 		
-		//should figure out how to set this properly
+		//something may have to intervene to help set this properly
 		bufferSize = 1;
 	}
 
@@ -28,6 +28,11 @@ public class FileStudy implements Study {
 	public String[] getCurImgAddress() {
 		return imgAddresses.subList(curIndex, curIndex + bufferSize)
 			.toArray(new String[]{});
+	}
+	
+	@Override
+	public void saveState() {
+		return;
 	}
 	
 	@Override
