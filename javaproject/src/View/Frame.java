@@ -293,6 +293,7 @@ public class Frame extends JFrame {
 				images = Director.getImages();
 				System.out.println(images.size());
 				fourTileMode();
+				fillScreen(images);
 				
 			}
 			
@@ -306,6 +307,7 @@ public class Frame extends JFrame {
 				curMode = StateHolder.images();
 				images = Director.getImages();
 				singleTileMode();
+				fillScreen(images);
 				
 			}
 			
@@ -434,7 +436,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				left.execute();
+				right.execute();
 				images = Director.getImages();
 				fillScreen(images);
 				rightArrow.setEnabled(Director.isRight());
@@ -447,7 +449,7 @@ public class Frame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				right.execute();
+				left.execute();
 				images = Director.getImages();
 				fillScreen(images);
 				rightArrow.setEnabled(Director.isRight());
@@ -531,8 +533,8 @@ public class Frame extends JFrame {
 //		JButton saveAs	= new JButton("Save As");
 		
 		// arrow Buttons
-		BasicArrowButton rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
-		BasicArrowButton leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
+		rightArrow = new BasicArrowButton(BasicArrowButton.EAST);
+		leftArrow = new BasicArrowButton(BasicArrowButton.WEST);
 		
 //		// action listeners 
 //		fourTile.addActionListener(new ActionListener()
@@ -570,7 +572,32 @@ public class Frame extends JFrame {
 		
 		rightScreen.add(new JLabel(""));
 		rightScreen.add(rightArrow);
+		
+		rightArrow.addActionListener(new ActionListener(){
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				right.execute();
+				images = Director.getImages();
+				fillScreen(images);
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
+			}
+			
+		});
+		
+		leftArrow.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				left.execute();
+				images = Director.getImages();
+				fillScreen(images);
+				rightArrow.setEnabled(Director.isRight());
+				leftArrow.setEnabled(Director.isLeft());
+			}
+			
+		});
 		
 //		mainLayout.add(topScreen, BorderLayout.NORTH);
 		mainLayout.add(centerScreen, BorderLayout.CENTER);
