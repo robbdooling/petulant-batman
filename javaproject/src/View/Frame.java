@@ -171,7 +171,7 @@ public class Frame extends JFrame {
 		
 		
 		// add to the file menu
-		file.add(open);
+		file.add(selectDirectory);
 		file.add(save);
 		file.add(saveAs);
 		file.add(close);
@@ -187,7 +187,7 @@ public class Frame extends JFrame {
 		// add action listeners 
 		
 		// file menu
-		open.addActionListener(new ActionListener(){
+		selectDirectory.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
