@@ -1,5 +1,10 @@
 package State;
 
+/**
+ * A UI state which displays one image.
+ * @author msd7734
+ *
+ */
 public class OneState implements State {
 
 	@Override
