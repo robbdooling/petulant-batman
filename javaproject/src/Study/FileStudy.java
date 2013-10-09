@@ -1,6 +1,7 @@
 package Study;
 
 import State.*;
+
 import java.util.List;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -137,5 +138,27 @@ public class FileStudy implements Study {
 		else {
 			curIndex = newIndex;
 		}
+	}
+	
+	//Hi matt
+	//You need to steal the implementation of isLeft and isRight from director and make it work here
+	//Also getImages
+
+	@Override
+	public boolean canLeft() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean canRight() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<String> getImages() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

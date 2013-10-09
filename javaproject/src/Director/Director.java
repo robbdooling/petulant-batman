@@ -51,6 +51,8 @@ public class Director {
 		}
 		return images;
 	}
+	
+	
 	/**
 	 * Set the root search directory to a different path
 	 * @param newRoot new Root path
@@ -88,6 +90,9 @@ public class Director {
 			}
 		}
 	}
+	
+	
+	
 	/**
 	 * Indicates if there is anything to the "left"
 	 * @return boolean that indicates whether it's possible to move to the left

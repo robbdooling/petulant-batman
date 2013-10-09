@@ -54,5 +54,10 @@ public interface Study {
 	 * @param newIndex The new index
 	 */
 	public void setIndex(int newIndex);
+	
+	public boolean canLeft();
+	
+	public boolean canRight();
 
+	public List<String> getImages();
 }

@@ -40,6 +40,21 @@ public class StudyBuilder {
 	 * @throws NoValidStudiesFoundException If no valid Study objects can be built
 	 * at the given address
 	 */
+	
+	//Hi Matt. I made some stubbed out methods from DirectorBlob for you to implement <3
+	public static void setRoot(){
+		
+	}
+	public static List<String> getAvailStudies(){
+		return null;
+	}
+	public static void choseStudy(int Index){
+		
+	}
+	
+	
+	
+	
 	public static Study[] getAvailableStudies(String rootDir, StudyType studyType)
 		throws NoValidStudiesFoundException {
 		

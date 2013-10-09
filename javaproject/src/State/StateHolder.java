@@ -1,5 +1,7 @@
 package State;
 
+import Study.Study;
+
 /**
  * A class that encapsulates UI State operations.
  * @author msd7734
@@ -7,7 +9,7 @@ package State;
  */
 public class StateHolder {
 	private static State currentState = new ZeroState();
-	
+	private static Study currentStudy = null;
 	/**
 	 * Cycle the current state to the next logical state.
 	 */
@@ -22,6 +24,21 @@ public class StateHolder {
 			//switch to 1
 			currentState = new OneState();
 		}
+	}
+	/**
+	 * Retrieves the current study being operated on
+	 * @return The current study
+	 */
+	public static Study getStudy(){
+		return currentStudy;
+	}
+	
+	/**
+	 * Changes the current study being operated on
+	 * @param newStudy The new study to change to
+	 */
+	public static void setStudy(Study newStudy){
+		currentStudy = newStudy;
 	}
 	
 	/**

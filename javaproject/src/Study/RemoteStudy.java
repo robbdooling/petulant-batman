@@ -53,4 +53,22 @@ public class RemoteStudy implements Study {
 	public void saveState(int index) {
 		return;
 	}
+
+	@Override
+	public boolean canLeft() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean canRight() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<String> getImages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
