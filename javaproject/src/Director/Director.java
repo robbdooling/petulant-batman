@@ -7,8 +7,8 @@ import State.StateHolder;
 import State.State;
 import Study.NoValidStudiesFoundException;
 import Study.Study;
-import Study.StudyBuilder;
-import Study.StudyBuilder.StudyType;
+import Study.StudyFactory;
+import Study.StudyFactory.StudyType;
 /**
  * Simplifys talking to and stores the currently opened Study
  * @author rob
@@ -66,7 +66,7 @@ public class Director {
 	 * @throws NoValidStudiesFoundException
 	 */
 	public static List<String> getAvailStudies() throws NoValidStudiesFoundException{
-		availStudies =  Arrays.asList(StudyBuilder.getAvailableStudies(root, StudyType.local));
+		availStudies =  Arrays.asList(StudyFactory.getAvailableStudies(root, StudyType.local));
 		List<String> stringStudies = new ArrayList<String>();
 		for(Study curr: availStudies){
 			stringStudies.add(curr.getMyPath());
@@ -79,7 +79,7 @@ public class Director {
 	 */
 	public static void choseStudy(int Index){
 		study = availStudies.get(Index);
-		State s = StudyBuilder.readState(study.getMyPath());
+		State s = StudyFactory.readState(study.getMyPath());
 		if (s == null) {
 			StateHolder.empty();
 			StateHolder.next();

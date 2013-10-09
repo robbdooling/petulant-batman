@@ -26,11 +26,11 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.regex.*;
 
-public class StudyBuilder {
+public class StudyFactory {
 	
 	public enum StudyType { remote, local; }
 	
-	private StudyBuilder() { }
+	private StudyFactory() { }
 	
 	/**
 	 * Find all the studies at a given address.
