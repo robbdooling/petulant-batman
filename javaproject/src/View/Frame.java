@@ -4,7 +4,6 @@ import Command.ChangeStateCommand;
 import Command.LeftCommand;
 import Command.RightCommand;
 import Command.SaveStudyCommand;
-import Director.Director;
 import State.StateHolder;
 import Study.NoValidStudiesFoundException;
 import Study.StudyFactory;
