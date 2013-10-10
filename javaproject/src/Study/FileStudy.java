@@ -140,10 +140,9 @@ public class FileStudy implements Study {
 		}
 	}
 	
-	//Hi matt
-	//You need to steal the implementation of isLeft and isRight from director and make it work here
-	//Also getImages
-
+	/**
+	 * Indicates whether it is possible to move to the left
+	 */
 	@Override
 	public boolean canLeft() {
 		int currentIndex = getIndex();
@@ -151,6 +150,9 @@ public class FileStudy implements Study {
 		return !((currentIndex - 1) < 0);
 	}
 
+	/**
+	 * Indicates whether it is possible to move to the right
+	 */
 	@Override
 	public boolean canRight() {
 		int currentIndex = getIndex();
@@ -160,6 +162,9 @@ public class FileStudy implements Study {
 		return !((currentIndex + step) > maxIndex);
 	}
 
+	/**
+	 * Gets the approprate number of images for the current state and returns them
+	 */
 	@Override
 	public List<String> getImages() {
 		List<String> images = null;

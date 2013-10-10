@@ -13,5 +13,9 @@ public interface State {
 	 * @return An int - the number of images
 	 */
 	public int images();
+	/**
+	 * Method for asking the current state what the next state should be
+	 * @return
+	 */
 	public State next();
 }
