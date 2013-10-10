@@ -44,11 +44,9 @@ public class StudyFactory {
 	 * at the given address
 	 */
 	
-	//Hi Matt. I made some stubbed out methods from DirectorBlob for you to implement <3
 	public static void setRoot(String newRoot){
 		root = newRoot;
 	}
-	//Changed name from getAvailStudies to getStudyNames
 	public static List<String> getStudyNames() throws NoValidStudiesFoundException{
 		availStudies =  Arrays.asList(getAvailableStudies(StudyType.local));
 		List<String> stringStudies = new ArrayList<String>();
@@ -151,7 +149,7 @@ public class StudyFactory {
 			if (f.isDirectory()) {
 				
 				File studyDir = new File(f.getPath());
-				
+
 				String[] jpgs = studyDir.list(
 					new FilenameFilter() {
 						@Override
@@ -162,6 +160,7 @@ public class StudyFactory {
 						}
 					}
 				);
+				Arrays.sort(jpgs);
 				
 				
 				File save = new File(studyDir.getPath() + File.separator + "0.sav");
