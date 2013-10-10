@@ -13,4 +13,5 @@ public interface State {
 	 * @return An int - the number of images
 	 */
 	public int images();
+	public State next();
 }

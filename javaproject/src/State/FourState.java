@@ -12,4 +12,9 @@ public class FourState implements State {
 		return 4;
 	}
 
+	@Override
+	public State next() {
+		return new OneState();
+	}
+
 }

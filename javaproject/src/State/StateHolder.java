@@ -14,16 +14,7 @@ public class StateHolder {
 	 * Cycle the current state to the next logical state.
 	 */
 	public static void next(){
-		if(currentState.images() == 0){
-			//Switch to 1
-			currentState = new OneState();
-		}else if(currentState.images() == 1){
-			//switch to 4
-			currentState = new FourState();
-		}else if(currentState.images() == 4){
-			//switch to 1
-			currentState = new OneState();
-		}
+		currentState = currentState.next();
 	}
 	/**
 	 * Retrieves the current study being operated on

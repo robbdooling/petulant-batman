@@ -12,4 +12,9 @@ public class ZeroState implements State {
 		return 0;
 	}
 
+	@Override
+	public State next() {
+		return new OneState();
+}
+
 }
