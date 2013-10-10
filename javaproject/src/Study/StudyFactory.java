@@ -30,6 +30,9 @@ public class StudyFactory {
 	
 	public enum StudyType { remote, local; }
 	
+	private static String root; 
+	private static List<Study> availStudies = null;
+	
 	private StudyFactory() { }
 	
 	/**
@@ -42,22 +45,39 @@ public class StudyFactory {
 	 */
 	
 	//Hi Matt. I made some stubbed out methods from DirectorBlob for you to implement <3
-	public static void setRoot(){
-		
+	public static void setRoot(String newRoot){
+		root = newRoot;
 	}
-	public static List<String> getAvailStudies(){
-		return null;
+	//Changed name from getAvailStudies to getStudyNames
+	public static List<String> getStudyNames() throws NoValidStudiesFoundException{
+		availStudies =  Arrays.asList(getAvailableStudies(StudyType.local));
+		List<String> stringStudies = new ArrayList<String>();
+		for(Study curr: availStudies){
+			stringStudies.add(curr.getMyPath());
+		}
+		return stringStudies;
 	}
 	public static void choseStudy(int Index){
-		
+		Study study = availStudies.get(Index);
+		StateHolder.setStudy(study);
+		State s = readState(study.getMyPath());
+		if (s == null) {
+			StateHolder.empty();
+			StateHolder.next();
+		}
+		else {
+			while (StateHolder.images() != s.images()) {
+				StateHolder.next();
+			}
+		}
 	}
 	
 	
 	
 	
-	public static Study[] getAvailableStudies(String rootDir, StudyType studyType)
+	public static Study[] getAvailableStudies(StudyType studyType)
 		throws NoValidStudiesFoundException {
-		
+		String rootDir = root;
 		if (! new File(rootDir).exists())
 			throw new NoValidStudiesFoundException(rootDir);
 		

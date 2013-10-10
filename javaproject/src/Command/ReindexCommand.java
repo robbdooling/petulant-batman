@@ -3,7 +3,6 @@
  */
 package Command;
 
-import Director.Director;
 import State.*;
 import Study.*;
 
@@ -11,7 +10,7 @@ public abstract class ReindexCommand implements Command {
 
 	@Override
 	public void execute() {
-		Study currentStudy = Director.getStudy();
+		Study currentStudy = StateHolder.getStudy();
 		int currentIndex = currentStudy.getIndex();
 		int newIndex;
 		if(direction() == -1 && (currentIndex - StateHolder.images()) < 0){

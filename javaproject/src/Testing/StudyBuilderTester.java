@@ -32,7 +32,8 @@ public class StudyBuilderTester {
 			List<Study> studies;
 			
 			try {
-				studies = Arrays.asList(StudyFactory.getAvailableStudies(root, type));
+				StudyFactory.setRoot(root);
+				studies = Arrays.asList(StudyFactory.getAvailableStudies(type));
 				for (Study s : studies) {
 					for (String img : s.getImgAddresses()) {
 						System.out.println(img);

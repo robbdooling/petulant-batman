@@ -146,19 +146,34 @@ public class FileStudy implements Study {
 
 	@Override
 	public boolean canLeft() {
-		// TODO Auto-generated method stub
-		return false;
+		int currentIndex = getIndex();
+		int step = StateHolder.images();
+		return !((currentIndex - 1) < 0);
 	}
 
 	@Override
 	public boolean canRight() {
-		// TODO Auto-generated method stub
-		return false;
+		int currentIndex = getIndex();
+		int step = StateHolder.images();
+		int maxIndex = (getImgAddresses().size() - 1);
+		
+		return !((currentIndex + step) > maxIndex);
 	}
 
 	@Override
 	public List<String> getImages() {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> images = null;
+		if(StateHolder.images() == 1){
+			images = getImgAddresses().subList(getIndex(), (getIndex() + StateHolder.images()));
+		}
+		else if(StateHolder.images() == 4){
+			if((getIndex() + 4) > (getImgAddresses().size()-1)){
+				images = getImgAddresses().subList(getIndex(), (getImgAddresses().size()));
+			}
+			else{
+				images = getImgAddresses().subList(getIndex(), (getIndex() + StateHolder.images()));	
+			}
+		}
+		return images;
 	}
 }

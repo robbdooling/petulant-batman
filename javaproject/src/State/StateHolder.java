@@ -1,5 +1,6 @@
 package State;
 
+import Study.NoStudy;
 import Study.Study;
 
 /**
@@ -9,7 +10,7 @@ import Study.Study;
  */
 public class StateHolder {
 	private static State currentState = new ZeroState();
-	private static Study currentStudy = null;
+	private static Study currentStudy = new NoStudy();
 	/**
 	 * Cycle the current state to the next logical state.
 	 */

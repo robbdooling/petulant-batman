@@ -7,12 +7,15 @@ import Command.SaveStudyCommand;
 import Director.Director;
 import State.StateHolder;
 import Study.NoValidStudiesFoundException;
+import Study.StudyFactory;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -95,7 +98,7 @@ public class Frame extends JFrame {
 		test.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		try {
-			listOfStudies = new JList<Object>(Director.getAvailStudies().toArray());
+			listOfStudies = new JList<Object>(StudyFactory.getStudyNames().toArray());
 		} catch (NoValidStudiesFoundException e1) {
 			System.err.println("No Available Studies");
 			JFrame errorFrame = new JFrame();
@@ -125,7 +128,7 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int index = listOfStudies.getSelectedIndex();
-				Director.choseStudy(index);
+				StudyFactory.choseStudy(index);
 				
 				if(StateHolder.images() == 4)
 				{
@@ -135,7 +138,7 @@ public class Frame extends JFrame {
 				{
 					singleTileMode();
 				}
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				fillScreen(images);
 				test.dispose();
 				
@@ -211,7 +214,7 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//open();
 				if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-					Director.setRoot(fc.getSelectedFile().getAbsolutePath());
+					StudyFactory.setRoot(fc.getSelectedFile().getAbsolutePath());
 					availableStudies();
 				} 
 				
@@ -274,7 +277,7 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				changeState.execute();
 				curMode = StateHolder.images();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				System.out.println(images.size());
 				fourTileMode();
 				fillScreen(images);
@@ -289,7 +292,7 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				changeState.execute();
 				curMode = StateHolder.images();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				singleTileMode();
 				fillScreen(images);
 				
@@ -342,8 +345,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(Director.isRight());
-		leftArrow.setEnabled(Director.isLeft());
+		rightArrow.setEnabled(StateHolder.getStudy().canRight());
+		leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 		
 		// add to layouts
 		leftScreen.add(new JLabel(""));
@@ -388,10 +391,10 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				right.execute();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				fillScreen(images);
-				rightArrow.setEnabled(Director.isRight());
-				leftArrow.setEnabled(Director.isLeft());
+				rightArrow.setEnabled(StateHolder.getStudy().canRight());
+				leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 			}
 			
 		});
@@ -401,10 +404,10 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				left.execute();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				fillScreen(images);
-				rightArrow.setEnabled(Director.isRight());
-				leftArrow.setEnabled(Director.isLeft());
+				rightArrow.setEnabled(StateHolder.getStudy().canRight());
+				leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 			}
 			
 		});
@@ -418,8 +421,8 @@ public class Frame extends JFrame {
 		
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(Director.isRight());
-		leftArrow.setEnabled(Director.isLeft());
+		rightArrow.setEnabled(StateHolder.getStudy().canRight());
+		leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 		
 		
 		// add to layouts
@@ -472,8 +475,8 @@ public class Frame extends JFrame {
 		rightScreen.setBorder(rightPadding);
 		
 		// enable left and right buttons
-		rightArrow.setEnabled(Director.isRight());
-		leftArrow.setEnabled(Director.isLeft());
+		rightArrow.setEnabled(StateHolder.getStudy().canRight());
+		leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 		
 	
 		leftScreen.add(new JLabel(""));
@@ -487,10 +490,10 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				right.execute();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				fillScreen(images);
-				rightArrow.setEnabled(Director.isRight());
-				leftArrow.setEnabled(Director.isLeft());
+				rightArrow.setEnabled(StateHolder.getStudy().canRight());
+				leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 			}
 			
 		});
@@ -500,10 +503,10 @@ public class Frame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				left.execute();
-				images = Director.getImages();
+				images = StateHolder.getStudy().getImages();
 				fillScreen(images);
-				rightArrow.setEnabled(Director.isRight());
-				leftArrow.setEnabled(Director.isLeft());
+				rightArrow.setEnabled(StateHolder.getStudy().canRight());
+				leftArrow.setEnabled(StateHolder.getStudy().canLeft());
 			}
 			
 		});
