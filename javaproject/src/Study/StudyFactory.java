@@ -10,7 +10,7 @@ package Study;
  * CmdBuilder or some other intermediary should be responsible for managing the
  * returned list of Studies and exposing what is necessary.
  * 
- * 4/29/13 Matt Dennis
+ * 9/29/13 Matt Dennis
  * - Initial implementation
  * 
  */
